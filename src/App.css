@@ -5,8 +5,32 @@
   min-width: 0;
 }
 
+/* -- Paleta de colores -- */
+:root {
+  --naranja-calabaza: #FF7F11;
+  --verde-lima: #3CB371;
+  --rojo-tomate: #E63946;
+  --beige-claro: #FFF4E6;
+  --gris-suave: #F5F5F5;
+  --negro-suave: #333333;
+  --blanco-puro: #FFFFFF;
+}
+
+/*
+  Tipografía:
+  - Poppins para encabezados y botones.
+  - Roboto para texto del cuerpo y formularios. 
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap');
+
 body{
   min-height: 100dvh;
+  margin: 0;
+  font-family: 'Roboto', sans-serif; /* Texto general */
+  color: var(--negro-suave);
+  background-color: var(--gris-suave);
+  line-height: 1.5;
+  font-size: 16px; /* Tamaño base */
 }
 
 
