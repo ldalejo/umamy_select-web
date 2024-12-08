@@ -78,6 +78,7 @@ button:focus-visible {
 /* -- Paleta de colores -- */
 :root {
   --naranja-calabaza: #FF7F11;
+  --naranja-oscuro: #e67608;
   --verde-lima: #3CB371;
   --rojo-tomate: #E63946;
   --beige-claro: #FFF4E6;
@@ -98,7 +99,7 @@ body{
   margin: 0;
   font-family: 'Roboto', sans-serif; /* Texto general */
   color: var(--negro-suave);
-  background-color: var(--gris-suave);
+  background-color: var(--beige-claro);
   line-height: 1.5;
   font-size: 16px; /* Tamaño base */
 }
@@ -110,4 +111,16 @@ h1, h2, h3, h4 {
 
 p {
   text-wrap: pretty;
+}
+
+input, select, textarea, button {
+  outline: none; 
+  border: 0.5px;
+}
+
+/* Estilo para los inputs, selects y textareas cuando están enfocados */
+input:focus, select:focus, textarea:focus {
+  outline: none; 
+  border: 1px solid var(--naranja-calabaza); /* Borde naranja calabaza */
+  background-color: #fff8f0; /* Un fondo suave (color más claro de calabaza) */
 }
