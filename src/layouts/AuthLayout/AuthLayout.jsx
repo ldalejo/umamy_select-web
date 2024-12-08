@@ -4,7 +4,7 @@ import './AuthLayout.css'
 
 export default function AuthLayout() {
   return (
-    <main>
+    <main className='main-authlayout'>
         <img 
             src="../../../img/logo3_umamyfood.svg" 
             alt="logo umamy food"

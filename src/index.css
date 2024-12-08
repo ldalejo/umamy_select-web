@@ -157,6 +157,6 @@ button, input[type="submit"] {
 /* Estilo para los inputs, selects y textareas cuando están enfocados */
 input:focus, select:focus, textarea:focus {
   outline: none; 
-  border: 1px solid var(--naranja-calabaza); /* Borde naranja calabaza */
-  background-color: var(--naranja-claro); /* Un fondo suave (color más claro de calabaza) */
+  border: 1px solid var(--naranja-calabaza);
+  background-color: var(--naranja-claro);
 }
