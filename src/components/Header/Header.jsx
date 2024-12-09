@@ -1,4 +1,5 @@
 import React from 'react'
+import { MdSearch } from "react-icons/md";
 import "./Header.css";
 
 export default function Header() {
@@ -20,7 +21,7 @@ export default function Header() {
                 placeholder="Buscar productos..."
             />
             <button className="header__busqueda-boton">
-                🔍
+                <MdSearch size={24} />
             </button>
         </form>
 

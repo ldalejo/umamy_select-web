@@ -6,7 +6,7 @@ export default function AuthLayout() {
   return (
     <main className='main-authlayout'>
         <img 
-            src="../../../img/logo3_umamyfood.svg" 
+            src="../../../img/logo_umamyfood.svg" 
             alt="logo umamy food"
             className='logo'
         />
