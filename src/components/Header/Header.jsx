@@ -10,7 +10,7 @@ export default function Header() {
             <img
                 src="../../../img/logo_pequeno.svg" 
                 alt="Logo"
-                className="header__logoImage"
+                className="header__logo-imagen"
             />
         </div>
 
@@ -25,9 +25,9 @@ export default function Header() {
             </button>
         </form>
 
-        <nav>
+        <nav className='header__pedido'>
             <button 
-                className="header__boton" 
+                className="header__pedido-boton" 
                 aria-label="Abrir el modal de Pedido"
             >
                 Pedido

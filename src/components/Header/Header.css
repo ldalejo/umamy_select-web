@@ -11,9 +11,10 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    margin-left: 0.5rem;
 }
 
-.header__logoImage {
+.header__logo-imagen {
     width: 5rem;
 }
 
@@ -41,8 +42,11 @@
     justify-content: center;
 }
 
+.header__pedido {
+    margin-right: 1rem;
+}
 
-.header__boton {
+.header__pedido-boton {
     background: none;
     border: none;
     font-size: inherit;
