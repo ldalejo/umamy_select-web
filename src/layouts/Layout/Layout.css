@@ -1,4 +1,16 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 .main__layout {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
 }
+
+.section__layout {
+    min-width: 60%;
+  }

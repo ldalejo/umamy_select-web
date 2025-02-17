@@ -1,0 +1,44 @@
+.aside__categoria {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid #d1d5db;
+    /* width: 100%; */
+    padding: 0.75rem;
+    cursor: pointer;
+}
+  
+.aside__categoria:hover {
+    background-color: var(--naranja-oscuro);
+}
+
+.aside__categoria-img {
+    width: 3rem;
+}
+
+.aside__categoria-p {
+    font: bold;
+}
+
+.menu__item {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    text-align: center; /* Centra el texto dentro del elemento */
+    padding: 10px 0; /* Espaciado interno vertical */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    font-weight: bold; /* Texto más resaltado */
+    text-decoration: none; /* Elimina el subrayado */
+    border-right: 1px solid #ddd; /* Agrega una línea entre los elementos */
+}
+
+/* Elimina la línea del último elemento */
+.menu__item:last-child {
+    border-right: none;
+}
+
+/* Cambio de color al pasar el mouse */
+.menu__item:hover {
+    background-color: var(--naranja-oscuro);
+}
+  
