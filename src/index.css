@@ -13,6 +13,7 @@
   --naranja-claro: #fff8f0;
   --verde-lima: #3CB371;
   --rojo-tomate: #E63946;
+  --rojo-oscuro: #c9302c;
   --beige-claro: #FFF4E6;
   --gris-suave: #F5F5F5;
   --negro-suave: #333333;
@@ -25,7 +26,7 @@
   - Roboto para texto del cuerpo y formularios. 
 */
 
-body{
+body {
   min-height: 100dvh;
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -33,6 +34,10 @@ body{
   background-color: var(--beige-claro);
   line-height: 1.5;
   font-size: 16px;
+}
+
+header {
+  width: 100%;
 }
 
 
