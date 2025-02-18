@@ -1,57 +1,118 @@
 .header {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     background-color: var(--naranja-calabaza);
     color: black;
 }
 
+.header__contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 .header__logo {
     display: flex;
     align-items: center;
     cursor: pointer;
-    margin-left: 0.5rem;
 }
 
 .header__logo-imagen {
-    width: 5rem;
+    width: auto;
+    height: 5rem;
 }
 
-.header__busqueda {
+/* .header__busqueda {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    min-width: 40rem;
-}
+    gap: 10px;
+} */
 
-.header__busqueda-input {
-    width: 100%;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+.header__busqueda-contenedor {
+    display: flex;
+    position: relative; /* Permite posicionar el botón dentro del input */
+  }
+
+.header__busqueda-input {  
+    padding: 5px 40px 5px 10px; /* Deja espacio para el botón dentro */
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    min-width: 25rem;
 }
 
 .header__busqueda-boton {
-    padding: 8px;
-    background-color: #febd69;
+    position: absolute;
+    right: 10px; /* Ajusta la posición del botón dentro del input */
+    top: 60%;
+    transform: translateY(-50%); /* Centra verticalmente */
+    background: none;
     border: none;
-    border-radius: 0 4px 4px 0;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.header__pedido {
-    margin-right: 1rem;
+.header__usuario-cesta {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+.header__usuario {
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--negro-suave);
+}
+
+.header__user-menu {
+    position: absolute;
+    top: 100%; /* Posicionar el menu justo abajo del header */
+    left: -180px; /* Lo movemos hacia la izquierda (ajustar según el diseño) */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    z-index: 10;
+}
+
+.header__user-menu ul {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.header__user-menu ul li {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.header__user-menu ul li:hover {
+    color:  var(--naranja-oscuro);
+}
+
+.header__user-menu ul li button {
+    background: none;
+    border: none;
+    color: var(--rojo-tomate);
+    cursor: pointer;
+}
+  
+.header__user-menu ul li button:hover {
+    color: var(--rojo-oscuro);
 }
 
 .header__pedido-boton {
-    background: none;
+    background-color: transparent;
     border: none;
-    font-size: inherit;
-    color: inherit;
     cursor: pointer;
+    color: var(--negro-suave);
 }
 
 .header__boton:focus {
