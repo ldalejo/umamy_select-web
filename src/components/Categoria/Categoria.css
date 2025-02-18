@@ -18,18 +18,17 @@
 
 .aside__categoria-p {
     font: bold;
+    text-transform: uppercase;
 }
 
 .menu__item {
     display: flex;
     align-items: center;
     justify-content:space-around;
-    text-align: center; /* Centra el texto dentro del elemento */
-    padding: 10px 0; /* Espaciado interno vertical */
-    cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    font-weight: bold; /* Texto más resaltado */
-    text-decoration: none; /* Elimina el subrayado */
-    border-right: 1px solid #ddd; /* Agrega una línea entre los elementos */
+    text-align: center;
+    cursor: pointer; 
+    font-weight: bold; 
+    text-decoration: none; 
 }
 
 /* Elimina la línea del último elemento */

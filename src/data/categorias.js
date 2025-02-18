@@ -1,26 +1,26 @@
 const categorias = [
     {
-      icono: "entrantes",
+      icono: "/img/icono_entrantes.png",
       nombre: "Entrantes",
       id:1
       },
       {
-        icono: "hamburguesas",
+        icono: "/img/icono_hamburguesas.png",
         nombre: "Hamburguesas",
         id: 2
       },
       {
-        icono: "carnes",
+        icono: "/img/icono_carnes.png",
         nombre: "Carnes",
         id: 3
       },
       {
-        icono: "bebidas",
+        icono: "/img/icono_bebidas.png",
         nombre: "Bebidas",
         id: 4
       },
       {
-        icono: "postres",
+        icono: "/img/icono_postres.png",
         nombre: "Postres",
         id: 5
       }

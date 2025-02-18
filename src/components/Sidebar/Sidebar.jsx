@@ -6,31 +6,16 @@ import './Sidebar.css'
 
 export default function Sidebar() {
   return (
-    <aside className=''>
-        {/*<section className='menu__aside'>
-            {categorias.map( categoria => (
-                <Categoria 
-                    categoria={categoria}
-                />
+    <div className="menu-container">
+      <aside className="menu">
+        <nav className="menu__contenido">
+          <ul className="menu__list">
+            {categorias.map((categoria) => (
+              <Categoria key={categoria.id} categoria={categoria} />
             ))}
-        </section>*/}
-        <nav className="menu">
-            <ul className="menu__list">
-                {categorias.map( categoria => (
-                    <Categoria 
-                        categoria={categoria}
-                    />
-                ))}
-            </ul>
+          </ul>
         </nav>
-{/*         <section>
-            <button
-                className='aside__boton-cerrarsesion'
-                type='button'
-            >
-                Cerrar sesión
-            </button>
-        </section> */}
-    </aside>
+      </aside>
+    </div>
   )
 }
