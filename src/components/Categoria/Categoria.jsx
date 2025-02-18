@@ -7,11 +7,11 @@ export default function Categoria({categoria}) {
     const {icono, nombre, id} = categoria;
     return (
         <li className='menu__item'>
-            <img
+            {/* <img
                 className='aside__categoria-img'
-                src={`/../../public/img/icono_${icono}.png`} 
-                alt='Icono'
-            />
+                src={icono} 
+                alt='Icono categoría'
+            /> */}
             <p className='aside__categoria-p'>{nombre}</p>
         </li>
     )

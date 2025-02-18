@@ -1,36 +1,50 @@
-/* Contenedor principal */
+/* Contenedor general para centrar */
+.menu-container {
+    display: flex;
+    justify-content: center;  /* Centra el menú */
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    z-index: 100;
+}
+
+/* Menú principal */
 .menu {
-    width: 100%; /* Ocupa todo el ancho de la pantalla */
-    background-color: #f8f9fa; /* Fondo opcional */
+    width: 90%;
+    max-width: 900px;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); 
+}
+
+/* Contenido del menú */
+.menu__contenido {
+    width: 100%;
 }
 
 /* Lista del menú */
 .menu__list {
-    display: flex; /* Coloca los elementos en una fila */
-    margin: 0; /* Elimina el margen de la lista */
-    padding: 0; /* Elimina el relleno de la lista */
-    list-style: none; /* Quita los puntos de las listas */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 /* Elementos individuales */
 .menu__item {
-    flex: 1; /* Cada elemento ocupa la misma proporción del espacio disponible */
-    text-align: center; /* Centra el texto dentro del elemento */
-    padding: 10px 0; /* Espaciado interno vertical */
-    cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    font-weight: bold; /* Texto más resaltado */
-    color: #333; /* Color del texto */
-    text-decoration: none; /* Elimina el subrayado */
-    border-right: 1px solid #ddd; /* Agrega una línea entre los elementos */
-}
-
-/* Elimina la línea del último elemento */
-.menu__item:last-child {
-    border-right: none;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+    flex: 1;
+    border-radius: 20px; 
 }
 
 /* Cambio de color al pasar el mouse */
 .menu__item:hover {
-    background-color: #eaeaea; /* Fondo claro al pasar el mouse */
-    color: #007bff; /* Color del texto en hover */
+    background-color: #f0f0f0;
+    color: var(--naranja-oscuro);
 }
