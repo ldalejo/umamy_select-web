@@ -10,7 +10,6 @@ export default function Layout() {
   return (
     <div className='layout'>
         <Header />
-        <Sidebar />
         <main className='main__layout'>
           <section className='section__layout'>
             <Outlet />
