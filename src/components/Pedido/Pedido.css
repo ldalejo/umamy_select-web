@@ -1,3 +1,4 @@
 .pedido {
-    width: 18rem;
+    background-color: var(--gris-suave);
+    width: 400px;
 }
