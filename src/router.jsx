@@ -1,7 +1,7 @@
 import {createBrowserRouter} from 'react-router-dom';
 import Layout from './layouts/Layout/Layout';
 import AuthLayout from './layouts/AuthLayout/AuthLayout';
-import Inicio from './views/Inicio';
+import Inicio from './views/Inicio/Inicio';
 import Login from './views/Login';
 import Registro from './views/Registro';
 
