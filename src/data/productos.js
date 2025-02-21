@@ -16,7 +16,7 @@ const productos = [
     {
         'id': 3,
         'categoria_id': 1,
-        'nombre': 'Cruzacampo',
+        'nombre': 'Cruzcampo',
         'precio': 2.5,
         'imagen': 'img/bebidas/cruzcampo.png'
     },
@@ -55,13 +55,13 @@ const productos = [
         'precio': 2,
         'imagen': 'img/bebidas/kaslimon.png'
     },
-    {
+    /* {
         'id': 9,
         'categoria_id': 1,
         'nombre': 'Kas Naranja',
         'precio': 2,
         'imagen': 'img/bebidas/kasnaranja.png'
-    },
+    }, */
     {
         'id': 10,
         'categoria_id': 1,
@@ -69,13 +69,13 @@ const productos = [
         'precio': 2,
         'imagen': 'img/bebidas/cruzcamporadler.png'
     },
-    {
+    /* {
         'id': 11,
         'categoria_id': 1,
         'nombre': 'Pepsi Zero',
         'precio': 2,
         'imagen': 'img/bebidas/pepsizero.png'
-    },
+    }, */
     {
         'id': 12,
         'categoria_id': 1,
