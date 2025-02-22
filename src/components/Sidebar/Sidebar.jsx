@@ -5,6 +5,7 @@ import { categorias } from '../../data/categorias'
 import './Sidebar.css'
 
 export default function Sidebar() {
+  
   return (
     <div className="menu-container">
       <aside className="menu">

@@ -5,6 +5,7 @@ import './categoria.css'
 export default function Categoria({categoria}) {
     // Aplicamos destructuring
     const {icono, nombre, id} = categoria;
+    
     return (
         <li className='menu__item'>
             {/* <img
