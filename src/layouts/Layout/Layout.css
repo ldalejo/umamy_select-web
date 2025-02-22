@@ -6,11 +6,10 @@
 
 .main__layout {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex: 1;
+    justify-content: center;
 }
 
 .section__layout {
-    min-width: 60%;
+    margin-top: 50px;
+    max-width: 1200px;
   }

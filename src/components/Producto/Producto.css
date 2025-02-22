@@ -1,0 +1,33 @@
+.producto {
+    border: 1px solid #e5e7eb;
+    border-radius: 30px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+
+}
+.imagen {
+    width: 100%;
+}
+
+.producto__contenido {
+    max-width: 300px;
+}
+
+.contenido__nombre {
+    font-size: 1.5rem;
+}
+.contenido__precio {
+    margin-top: 20px;
+}
+
+.producto__boton {
+    width: 150px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    background-color: var(--naranja-calabaza);
+    cursor: pointer;
+}
