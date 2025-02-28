@@ -4,7 +4,7 @@
     justify-content: center;  /* Centra el menú */
     position: fixed;
     top: 100px;
-    width: 100%;
+    width: 800px;
     z-index: 100;
 }
 
