@@ -7,12 +7,20 @@ const UmamyProvider = ({ children }) => {
 
     const [categorias, setCategorias] = useState(categoriasDB);
     const [categoriaActual, setCategoriaActual] = useState(categorias[0]);
+    const [modal, setModal] = useState(false);
+    const [producto , setProducto] = useState({});
     
     const handleClickCategoria = id => {
         const categoria = categorias.filter(categoria => categoria.id === id)[0];
         setCategoriaActual(categoria);
+    }
 
-        console.log(categoria);
+    const handleClickModal = () => {
+        setModal(!modal);
+    }
+
+    const handleSetProducto = (producto) => {
+        setProducto(producto);
     }
 
     return (
@@ -20,7 +28,11 @@ const UmamyProvider = ({ children }) => {
             value={{
                 categorias,
                 categoriaActual,
-                handleClickCategoria
+                modal,
+                producto,
+                handleClickCategoria,
+                handleClickModal,
+                handleSetProducto
             }}
         >
             {children}
