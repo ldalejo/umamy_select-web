@@ -1,0 +1,38 @@
+.modal__cantidad-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.modal__parrafo {
+    font-size: 24px;
+    margin: 0;
+}
+
+.modal__icono-cerrar {
+    float: inline-end;
+    margin-top: -35px;
+    margin-right: -15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal_sumar-restar {
+    font-size: 24px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal__anadir-producto {
+    width: 150px;
+    border-radius: 30px;
+    background-color: var(--naranja-calabaza);
+    cursor: pointer;
+    text-transform: uppercase;
+}
