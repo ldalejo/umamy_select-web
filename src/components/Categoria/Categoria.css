@@ -6,6 +6,26 @@
     /* width: 100%; */
     padding: 0.75rem;
     cursor: pointer;
+    font: bold;
+    text-transform: uppercase;
+    background-color: white;
+    border:  0px;
+    border-radius: 30px;
+}
+
+.aside__categoria-seleccionada {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid #d1d5db;
+    /* width: 100%; */
+    padding: 0.75rem;
+    cursor: pointer;
+    font: bold;
+    text-transform: uppercase;
+    background-color: var(--naranja-oscuro);
+    border:  0px;
+    border-radius: 30px;
 }
   
 .aside__categoria:hover {
@@ -14,11 +34,6 @@
 
 .aside__categoria-img {
     width: 3rem;
-}
-
-.aside__categoria-p {
-    font: bold;
-    text-transform: uppercase;
 }
 
 .menu__item {
