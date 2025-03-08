@@ -1,10 +1,13 @@
 import React from 'react'
+import useUmamy from '../../hooks/useUmamy';
 import Categoria from '../Categoria/Categoria'
 
 import { categorias } from '../../data/categorias'
 import './Sidebar.css'
 
 export default function Sidebar() {
+
+  const {categorias} = useUmamy();
   
   return (
     <div className="menu-container">
