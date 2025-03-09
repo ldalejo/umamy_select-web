@@ -9,13 +9,15 @@ export default function Resumen() {
 
   const { pedido, total } = useUmamy();
 
+  const comprobarPedido = () => pedido.length === 0;
+
   return (
     <aside className='pedido'>
       <h2>Mi Pedido</h2>
-      <section>
+      <section className='pedido__productos'>
         <article>
           {pedido.length === 0 ? (
-            <p>Tu carrito está vacio</p>
+            <p>Tu pedido está vacio</p>
           ) : (
             pedido.map(producto => (
               <ResumenProducto
@@ -27,28 +29,20 @@ export default function Resumen() {
         }
         </article>
       </section>
-      <section>
-        <p>Importe total : {formatearDinero(total)}</p>
+      <section className='pedido__footer'>
+        <article className='pedido__importe'>
+          <p>Importe total: </p>
+          <p>{formatearDinero(total)}</p>
+        </article>
+        <form className='pedido__form'>
+          <input 
+            type="submit" 
+            className='enviar-pedido'
+            value='Confirmar pedido'
+            disabled={comprobarPedido()}
+          />
+        </form>
       </section>
-        <section>
-          <form>
-            <input 
-              type="submit" 
-              className='enviar-pedido'
-              value='Confirmar pedido'
-            />
-          </form>
-        </section>
     </aside>
   )
 }
-
-    {/* <section className='pedido'>
-      <article >
-        <h1>Tu Pedido</h1>
-        <p>Tu carrito está vacio</p>
-      </article>
-      <article>
-        <p>Importe total : </p>
-      </article>
-    </section> */}
