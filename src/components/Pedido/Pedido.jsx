@@ -3,10 +3,11 @@ import useUmamy from '../../hooks/useUmamy';
 
 import './Pedido.css'
 import ResumenProducto from '../ResumenProducto/ResumenProducto';
+import { formatearDinero } from '../../helpers';
 
 export default function Resumen() {
 
-  const {pedido} = useUmamy();
+  const { pedido, total } = useUmamy();
 
   return (
     <aside className='pedido'>
@@ -27,7 +28,7 @@ export default function Resumen() {
         </article>
       </section>
       <section>
-        <p>Importe total : {''}</p>
+        <p>Importe total : {formatearDinero(total)}</p>
       </section>
         <section>
           <form>

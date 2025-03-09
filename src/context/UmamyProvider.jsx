@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { categorias as categoriasDB} from '../data/categorias'
 
 const UmamyContext = createContext();
@@ -10,6 +10,12 @@ const UmamyProvider = ({ children }) => {
     const [modal, setModal] = useState(false);
     const [producto , setProducto] = useState({});
     const [pedido, setPedido] = useState([]);
+    const [total, setTotal] = useState(0);
+
+    /* Cada vez que el pedido se modifique, se actualiza el montante total */
+    useEffect(() => {
+        handleEditarTotal();
+    },[pedido])
     
     const handleClickCategoria = id => {
         const categoria = categorias.filter(categoria => categoria.id === id)[0];
@@ -47,6 +53,11 @@ const UmamyProvider = ({ children }) => {
         setPedido(pedidoActualizado);
     }
 
+    const handleEditarTotal = () => {
+        const nuevoTotal = pedido.reduce( (total, producto) => (producto.precio * producto.cantidad) + total, 0)
+        setTotal(nuevoTotal);
+    }
+
     return (
         <UmamyContext.Provider
             value={{
@@ -55,6 +66,7 @@ const UmamyProvider = ({ children }) => {
                 modal,
                 producto,
                 pedido,
+                total,
                 handleClickCategoria,
                 handleClickModal,
                 handleSetProducto,
