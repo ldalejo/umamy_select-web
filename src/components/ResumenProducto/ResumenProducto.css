@@ -1,0 +1,56 @@
+.resumenPedido__container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 30px;
+    display: flex;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.resumenPedido__resumen {
+    display: flex;
+    align-items: center;
+}
+
+.resumenPedido__datos {
+    display: flex;
+    flex-direction: row;
+}
+
+.resumenPedido__imagen {
+    width: 50%;
+    height: auto;
+}
+
+.resumenPedido__container-botones {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 1rem;
+}
+
+.resumenPedido__container-cantidad {
+    display: flex;
+    align-items: center;
+}
+
+.resumenPedido__p {
+    font-size: 24px;
+}
+
+.resumenPedido__precio-p {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.resumenPedido__iconos {
+    font-size: 30px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
