@@ -1,13 +1,14 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Modal from 'react-modal'
-import Sidebar from '../../components/Sidebar/Sidebar'
-import Pedido from '../../components/Pedido/Pedido'
-import Header from '../../components/Header/Header'
-import ModalProducto from '../../components/ModalProducto/ModalProducto'
-import './Layout.css'
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Modal from 'react-modal';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Pedido from '../../components/Pedido/Pedido';
+import Header from '../../components/Header/Header';
+import ModalProducto from '../../components/ModalProducto/ModalProducto';
+import './Layout.css';
 
-import useUmamy from '../../hooks/useUmamy'
+import useUmamy from '../../hooks/useUmamy';
 
 // Establece el elemento principal para mejorar la accesibilidad y el manejo del foco en el modal.
 Modal.setAppElement('#root');
@@ -39,6 +40,7 @@ export default function Layout() {
         >
         </button>
       </Modal>
+      <ToastContainer />
     </>
   )
 }
