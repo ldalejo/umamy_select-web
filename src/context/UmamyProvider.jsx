@@ -25,7 +25,7 @@ const UmamyProvider = ({ children }) => {
     }
 
     /* Sacamos categoria_id e imagen del objeto que manejamos porque no nos hace falta de momento */
-    const handleAgregarPedido = ({categoria_id, imagen, ...producto}) => {
+    const handleAgregarPedido = (producto) => {
         setPedido([...pedido, producto]);
     }
 
