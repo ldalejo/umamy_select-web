@@ -45,8 +45,19 @@
     font-size: 24px;
 }
 
-.resumenPedido__iconos {
+.resumenPedido__icono-editar {
     font-size: 30px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.resumenPedido__icono-eliminar {
+    font-size: 30px;
+    color: red;
     display: flex;
     align-items: center; 
     justify-content: center;
