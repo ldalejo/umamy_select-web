@@ -1,5 +1,59 @@
 .pedido {
     background-color: var(--gris-suave);
     width: 400px;
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1); 
-}
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .pedido h2 {
+    position: sticky; /* Fija el título en la parte superior al hacer scroll */
+    top: 0;
+    background-color: var(--gris-suave);
+    z-index: 10;
+    padding: 1rem 0;
+    margin: 0;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  .pedido__productos {
+    flex-grow: 1;
+    overflow-y: auto; /* Permite el scroll solo en esta sección */
+    padding-bottom: 50px; /* Espacio suficiente para no cubrir el footer */
+  }
+  
+  .pedido__footer {
+    padding: 1rem;
+    position: sticky; /* Fija el título en la parte superior al hacer scroll */
+    bottom: 0;
+    background-color: var(--gris-suave);
+    z-index: 5;
+    border-top: 2px solid #ccc;;
+  }
+  
+  .pedido__importe {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .enviar-pedido {
+    width: 200px;
+    border-radius: 20px;
+    background-color: var(--naranja-calabaza);
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  
+  .enviar-pedido:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+    color: #666;
+  }
+  
+  .pedido__form {
+    display: flex;
+    justify-content: center;
+  }
+  

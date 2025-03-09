@@ -1,9 +1,12 @@
 import React, {useState} from 'react'
 import { formatearDinero } from '../../helpers';
+import useUmamy from '../../hooks/useUmamy';
 
 import './Producto.css'
 
 export default function Producto({producto}) {
+
+    const { handleClickModal, handleSetProducto } = useUmamy();
     // Aplicamos destructuring
     const {id, imagen, nombre, precio} = producto;
 
@@ -19,7 +22,13 @@ export default function Producto({producto}) {
                 <p className='contenido__precio'>{formatearDinero(precio)}</p>
                 <button
                     type='button'
-                    className='producto__boton'>
+                    className='producto__boton'
+                    onClick={() => {
+                        handleClickModal();
+                        handleSetProducto(producto);
+                    }
+                    }
+                >
                     PEDIR
                 </button>
             </section>
