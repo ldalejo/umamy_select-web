@@ -1,5 +1,5 @@
 .resumenPedido__container {
-    background-color: white;
+    background-color: var(--blanco-puro);
     display: flex;
     flex-direction: column;
     margin: 1rem;
@@ -38,6 +38,14 @@
 
 .resumenPedido__p {
     font-size: 24px;
+    width: 35px;
+    height: 35px;
+    background-color: var(--naranja-calabaza);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
 }
 
 .resumenPedido__precio-p {
@@ -57,7 +65,7 @@
 
 .resumenPedido__icono-eliminar {
     font-size: 30px;
-    color: red;
+    color: var(--rojo-tomate);
     display: flex;
     align-items: center; 
     justify-content: center;

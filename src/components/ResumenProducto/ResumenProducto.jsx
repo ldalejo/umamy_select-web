@@ -10,7 +10,7 @@ export default function ResumenProducto({producto}) {
   const [importe, setImporte] = useState(0);
   
   const { id, nombre, imagen, precio, cantidad } = producto;
-  const { handleEditarCantidad } = useUmamy();
+  const { handleEditarCantidad, handleEliminarProductoPedido } = useUmamy();
 
   /* Tenemos el importe siempre actualizado a la cantidad de producto*/
   useEffect(() => {
@@ -24,12 +24,12 @@ export default function ResumenProducto({producto}) {
   return (
     <section className='resumenPedido__container'>
       <article className='resumenPedido__resumen'>
-            <img 
-                src={imagen} 
-                alt={`imagen ${nombre}`}
-                className='resumenPedido__imagen'
-            />
-        <p>{nombre}</p>
+          <img 
+              src={imagen} 
+              alt={`imagen ${nombre}`}
+              className='resumenPedido__imagen'
+          />
+          <p>{nombre}</p>
       </article>
 
       <article className='resumenPedido__container-botones'>
@@ -39,9 +39,7 @@ export default function ResumenProducto({producto}) {
                 <button 
                     className='resumenPedido__icono-editar'
                     aria-label='Editar producto'
-                    onClick={() => {
-                      handleEditarCantidad(id);
-                    }
+                    onClick={() => {handleEditarCantidad(id)}
                   }
                 >
                     <MdEdit aria-hidden="true"/>
@@ -49,6 +47,7 @@ export default function ResumenProducto({producto}) {
                 <button 
                     className='resumenPedido__icono-eliminar'
                     aria-label='Eliminar producto'
+                    onClick={() => {handleEliminarProductoPedido(id)}}
                 >
                     <MdDelete aria-hidden="true"/>
                 </button>
