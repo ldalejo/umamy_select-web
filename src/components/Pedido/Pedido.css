@@ -1,5 +1,13 @@
 .pedido {
     background-color: var(--gris-suave);
-    width: 400px;
+    width: 300px;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.enviar-pedido {
+    width: 200px;
+    border-radius: 20px;
+    background-color: var(--naranja-calabaza);
+    cursor: pointer;
+    text-transform: uppercase;
 }
