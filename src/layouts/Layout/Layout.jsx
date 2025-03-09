@@ -15,7 +15,6 @@ Modal.setAppElement('#root');
 export default function Layout() {
 
   const { modal, handleClickModal } = useUmamy();
-  console.log(modal);
 
   return (
     <>

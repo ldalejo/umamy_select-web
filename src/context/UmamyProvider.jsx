@@ -25,7 +25,7 @@ const UmamyProvider = ({ children }) => {
     }
 
     const handleAgregarPedido = (producto) => {
-        
+
         if (pedido.some(pedidoState => pedidoState.id === producto.id)) {
             const pedidoActualizado = pedido.map(pedidoState => pedidoState.id === producto.id ? producto : pedidoState)
             setPedido(pedidoActualizado);
@@ -33,6 +33,7 @@ const UmamyProvider = ({ children }) => {
         } else {
             setPedido([...pedido, producto]);
         }
+        setModal(!modal);
     }
 
     return (

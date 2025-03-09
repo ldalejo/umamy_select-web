@@ -1,6 +1,7 @@
 import React from 'react'
 import { MdEdit,  MdDelete} from "react-icons/md";
 import { formatearDinero } from '../../helpers';
+import useUmamy from '../../hooks/useUmamy';
 import { useState, useEffect } from 'react';
 
 import './ResumenProducto.css'
@@ -9,6 +10,7 @@ export default function ResumenProducto({producto}) {
   const [importe, setImporte] = useState(0);
   
   const { id, nombre, imagen, precio, cantidad } = producto;
+  const { handleClickModal } = useUmamy();
 
   /* Tenemos el importe siempre actualizado a la cantidad de producto*/
   useEffect(() => {
@@ -37,6 +39,10 @@ export default function ResumenProducto({producto}) {
                 <button 
                     className='resumenPedido__icono-editar'
                     aria-label='Editar producto'
+                    onClick={() => {
+                      handleClickModal();
+                    }
+                  }
                 >
                     <MdEdit aria-hidden="true"/>
                 </button>
