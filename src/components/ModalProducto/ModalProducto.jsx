@@ -10,13 +10,21 @@ export default function ModalProducto() {
 
     const [cantidad, setCantidad] = useState(1);
     const [importe, setImporte] = useState(0);
+    const [edicion, setEdicion] = useState(false);
 
-    const { producto, handleClickModal, handleAgregarPedido } = useUmamy();
+    const { producto, handleClickModal, handleAgregarPedido, pedido } = useUmamy();
 
     /* Tenemos el importe siempre actualizado a la cantidad de producto*/
     useEffect(() => {
         actualizarImporte();
-    }, [cantidad])
+    }, [cantidad]);
+
+    /* Controla si el producto seleccionado esta en el pedido lo modifica*/
+    useEffect(() => {
+        if (pedido.some(pedidoState => pedidoState.id === producto.id)) {
+            modificarPedido();
+        }
+    }, [pedido]);
 
     const restarProducto = () => {
         if (cantidad > 1) {
@@ -32,6 +40,12 @@ export default function ModalProducto() {
 
     const actualizarImporte = () => {
         setImporte(cantidad * producto.precio);
+    }
+
+    const modificarPedido = () => {
+        const productoEditar = pedido.filter(pedidoState => pedidoState.id === producto.id)[0];
+        setCantidad(productoEditar.cantidad);
+        setEdicion(true);
     }
 
   return (
@@ -77,7 +91,7 @@ export default function ModalProducto() {
                 className="modal__anadir-producto"
                 onClick={() => handleAgregarPedido({...producto, cantidad})}
             >
-                Añadir {formatearDinero(importe)}
+                {edicion ? 'Editar' : 'Añadir'} {formatearDinero(importe)}
             </button>
         </section>
     </section>
