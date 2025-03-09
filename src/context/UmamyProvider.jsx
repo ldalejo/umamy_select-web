@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
-import { categorias as categoriasDB} from '../data/categorias'
+import { categorias as categoriasDB} from '../data/categorias';
+import { toast } from "react-toastify";
 
 const UmamyContext = createContext();
 
@@ -31,13 +32,14 @@ const UmamyProvider = ({ children }) => {
     }
 
     const handleAgregarPedido = (producto) => {
-
         if (pedido.some(pedidoState => pedidoState.id === producto.id)) {
             const pedidoActualizado = pedido.map(pedidoState => pedidoState.id === producto.id ? producto : pedidoState)
             setPedido(pedidoActualizado);
+            toast.success('Producto actualizado.')
             
         } else {
             setPedido([...pedido, producto]);
+            toast.success('Producto añadido.');
         }
         setModal(!modal);
     }
@@ -51,6 +53,7 @@ const UmamyProvider = ({ children }) => {
     const handleEliminarProductoPedido = id => {
         const pedidoActualizado = pedido.filter(producto => producto.id !== id)
         setPedido(pedidoActualizado);
+        toast.error("Producto eliminado.")
     }
 
     const handleEditarTotal = () => {
