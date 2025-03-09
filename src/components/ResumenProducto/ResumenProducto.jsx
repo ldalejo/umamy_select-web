@@ -10,7 +10,7 @@ export default function ResumenProducto({producto}) {
   const [importe, setImporte] = useState(0);
   
   const { id, nombre, imagen, precio, cantidad } = producto;
-  const { handleClickModal } = useUmamy();
+  const { handleEditarCantidad } = useUmamy();
 
   /* Tenemos el importe siempre actualizado a la cantidad de producto*/
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function ResumenProducto({producto}) {
                     className='resumenPedido__icono-editar'
                     aria-label='Editar producto'
                     onClick={() => {
-                      handleClickModal();
+                      handleEditarCantidad(id);
                     }
                   }
                 >

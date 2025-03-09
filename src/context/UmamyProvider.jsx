@@ -36,6 +36,12 @@ const UmamyProvider = ({ children }) => {
         setModal(!modal);
     }
 
+    const handleEditarCantidad = id => {
+        const productoActualizar = pedido.filter(producto => producto.id === id)[0];
+        setProducto(productoActualizar);
+        handleClickModal();
+    }
+
     return (
         <UmamyContext.Provider
             value={{
@@ -47,7 +53,8 @@ const UmamyProvider = ({ children }) => {
                 handleClickCategoria,
                 handleClickModal,
                 handleSetProducto,
-                handleAgregarPedido
+                handleAgregarPedido,
+                handleEditarCantidad
             }}
         >
             {children}
