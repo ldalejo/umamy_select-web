@@ -11,7 +11,7 @@ export default function ModalProducto() {
     const [cantidad, setCantidad] = useState(1);
     const [importe, setImporte] = useState(0);
 
-    const { producto, handleClickModal } = useUmamy();
+    const { producto, handleClickModal, handleAgregarPedido } = useUmamy();
 
     /* Tenemos el importe siempre actualizado a la cantidad de producto*/
     useEffect(() => {
@@ -72,7 +72,11 @@ export default function ModalProducto() {
                 <MdAddCircle />
                 </button>
             </article>
-            <button type="button" className="modal__anadir-producto">
+            <button 
+                type="button" 
+                className="modal__anadir-producto"
+                onClick={() => handleAgregarPedido({...producto, cantidad})}
+            >
                 Añadir {formatearDinero(importe)}
             </button>
         </section>

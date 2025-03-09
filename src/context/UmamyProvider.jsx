@@ -9,6 +9,7 @@ const UmamyProvider = ({ children }) => {
     const [categoriaActual, setCategoriaActual] = useState(categorias[0]);
     const [modal, setModal] = useState(false);
     const [producto , setProducto] = useState({});
+    const [pedido, setPedido] = useState([]);
     
     const handleClickCategoria = id => {
         const categoria = categorias.filter(categoria => categoria.id === id)[0];
@@ -23,6 +24,11 @@ const UmamyProvider = ({ children }) => {
         setProducto(producto);
     }
 
+    /* Sacamos categoria_id e imagen del objeto que manejamos porque no nos hace falta de momento */
+    const handleAgregarPedido = ({categoria_id, imagen, ...producto}) => {
+        setPedido([...pedido, producto]);
+    }
+
     return (
         <UmamyContext.Provider
             value={{
@@ -30,9 +36,11 @@ const UmamyProvider = ({ children }) => {
                 categoriaActual,
                 modal,
                 producto,
+                pedido,
                 handleClickCategoria,
                 handleClickModal,
-                handleSetProducto
+                handleSetProducto,
+                handleAgregarPedido
             }}
         >
             {children}
