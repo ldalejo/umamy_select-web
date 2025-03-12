@@ -1,13 +1,13 @@
 import { createContext, useState, useEffect } from "react";
-import { categorias as categoriasDB} from '../data/categorias';
 import { toast } from "react-toastify";
+import Axios from "../config/axios";
 
 const UmamyContext = createContext();
 
 const UmamyProvider = ({ children }) => {
 
-    const [categorias, setCategorias] = useState(categoriasDB);
-    const [categoriaActual, setCategoriaActual] = useState(categorias[0]);
+    const [categorias, setCategorias] = useState([]);
+    const [categoriaActual, setCategoriaActual] = useState({});
     const [modal, setModal] = useState(false);
     const [producto , setProducto] = useState({});
     const [pedido, setPedido] = useState([]);
@@ -17,6 +17,20 @@ const UmamyProvider = ({ children }) => {
     useEffect(() => {
         handleEditarTotal();
     },[pedido])
+
+    useEffect(() => {
+        obtenerCategorias();
+    }, []);
+
+    const obtenerCategorias = async () => {
+        try {
+            const {data} = await Axios('/api/categorias');
+            setCategorias(data.data);
+            setCategoriaActual(data.data[0]);
+        } catch (error) {
+            console.log(error);
+        }
+    }
     
     const handleClickCategoria = id => {
         const categoria = categorias.filter(categoria => categoria.id === id)[0];
