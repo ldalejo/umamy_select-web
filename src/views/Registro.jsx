@@ -1,73 +1,117 @@
 import React from 'react'
+import { createRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import Axios from '../config/axios';
+import AlertaErroresFormulario from '../components/AlertaErroresFormulario/AlertaErroresFormulario';
+import useAuth from '../hooks/useAuth';
+
 
 export default function Registro() {
+
+    const [errores, setErrores] = useState();
+
+    const nombreRef = createRef();
+    const emailRef = createRef();
+    const passwordRef = createRef();
+    const confirmacionPasswordRef = createRef();
+
+    const { registro } = useAuth({middleware: 'guest', url: '/'});
+
+    const handleSubmit = async e => {
+        e.preventDefault();
+
+        const datos = {
+            nombre: nombreRef.current.value,
+            email: emailRef.current.value,
+            password: passwordRef.current.value,
+            password_confirmation: confirmacionPasswordRef.current.value
+        }
+        registro(datos, setErrores);
+    }
+
   return (
     <>
         <h1>Crear cuenta</h1>
         <div className="formulario-contenedor">
-            <form>
+            <form
+                onSubmit={handleSubmit}
+                noValidate
+            >
+                {
+                    errores 
+                    ? 
+                    errores.map(error => 
+                        <AlertaErroresFormulario key={error}>{error}</AlertaErroresFormulario>
+                    ) 
+                    : 
+                    null
+                }
+
                 <div className="formulario-apartado">
-                    <label
+                    {/* <label
                         className="formulario-label"
                         htmlFor="nombre"
                     >
                         Nombre:
-                    </label>
+                    </label> */}
                     <input 
                         type="text" 
                         id="nombre"
                         className="formulario-input"
                         name="nombre"
                         placeholder="Nombre"
+                        ref={nombreRef}
                     />
                 </div>
 
                 <div className="formulario-apartado">
-                    <label
+                    {/* <label
                         className="formulario-label"
                         htmlFor="email"
                     >
                         Email:
-                    </label>
+                    </label> */}
                     <input 
                         type="email" 
                         id="email"
                         className="formulario-input"
                         name="email"
                         placeholder="Email"
+                        ref={emailRef}
                     />
                 </div>
 
                 <div className="formulario-apartado">
-                    <label
+                    {/* <label
                         className="formulario-label"
                         htmlFor="password"
                     >
                         Password:
-                    </label>
+                    </label> */}
                     <input 
                         type="password" 
                         id="password"
                         className="formulario-input"
                         name="password"
                         placeholder="Password"
+                        ref={passwordRef}
                     />
                 </div>
 
                 <div className="formulario-apartado">
-                    <label
+                    {/* <label
                         className="formulario-label"
-                        htmlFor="password_confirmation"
+                        htmlFor="confirmacion_password"
                     >
                         Repetir Password:
-                    </label>
+                    </label> */}
                     <input 
                         type="password" 
-                        id="password_confirmation"
+                        id="confirmacion_password"
                         className="formulario-input"
-                        name="password_confirmation"
+                        name="confirmacion_password"
                         placeholder="Repetir Password"
+                        ref={confirmacionPasswordRef}
                     />
                 </div>
 

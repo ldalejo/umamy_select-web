@@ -9,12 +9,14 @@ import ModalProducto from '../../components/ModalProducto/ModalProducto';
 import './Layout.css';
 
 import useUmamy from '../../hooks/useUmamy';
+import useAuth from '../../hooks/useAuth';
 
 // Establece el elemento principal para mejorar la accesibilidad y el manejo del foco en el modal.
 Modal.setAppElement('#root');
 
 export default function Layout() {
 
+  const { user, error } = useAuth({middleware: 'auth'});
   const { modal, handleClickModal } = useUmamy();
 
   return (

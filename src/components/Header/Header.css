@@ -118,3 +118,8 @@
 .header__boton:focus {
     text-decoration: underline;
 }
+
+.header__user-nombre {
+    text-transform: uppercase;
+    color: var(--naranja-oscuro);
+}

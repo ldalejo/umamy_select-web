@@ -1,9 +1,14 @@
 import React, {useState} from 'react'
 import { MdSearch, MdShoppingCart, MdAccountCircle } from "react-icons/md";
+import useAuth from '../../hooks/useAuth';
+
 import "./Header.css";
 
 export default function Header() {
+
     const [menuUserVisible, setMenuUserVisible] = useState(false);
+
+    const { user, logout } = useAuth({middleware: 'auth'});
 
     /* Manejador del menu usuario */
     const handlerMenuUser = () => {
@@ -55,10 +60,16 @@ export default function Header() {
                 {menuUserVisible && (
                     <nav className="header__user-menu">
                     <ul>
-                        <li>Nombre de Usuario</li>
+                        <li className='header__user-nombre'>{user.name}</li>
                         <li>Datos Personales</li>
                         <li>Historial</li>
-                        <li><button>Cerrar Sesión</button></li>
+                        <li>
+                            <button
+                                onClick={logout}
+                            >
+                                Cerrar Sesión
+                            </button>
+                        </li>
                     </ul>
                     </nav>
                 )}
