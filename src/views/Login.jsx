@@ -1,32 +1,32 @@
 import React from 'react'
 import { createRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Axios from '../config/axios';
 import AlertaErroresFormulario from '../components/AlertaErroresFormulario/AlertaErroresFormulario';
+import useAuth from '../hooks/useAuth';
 
 export default function Login() {
 
   const [errores, setErrores] = useState();
 
-    const emailRef = createRef();
-    const passwordRef = createRef();
+  const emailRef = createRef();
+  const passwordRef = createRef();
 
-    const handleSubmit = async e => {
-        e.preventDefault();
+  const { login } = useAuth({
+    middleware: 'guest',
+    url: '/'
+  });
 
-        const datos = {
-            email: emailRef.current.value,
-            password: passwordRef.current.value,
-        }
+  const handleSubmit = async e => {
+    e.preventDefault();
 
-        try {
-          const { data } = await Axios.post('/api/iniciar-sesion', datos);
-          localStorage.setItem('AUTH_TOKEN', data.token);
-          setErrores([]);
-        } catch (error) {
-          setErrores(Object.values(error.response.data.errors));
-        }
+    const datos = {
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
     }
+
+    login(datos, setErrores);
+
+  }
 
   return (
     <>
