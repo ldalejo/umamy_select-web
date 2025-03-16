@@ -29,7 +29,7 @@ export default function Header() {
             </div>
 
             {/* Barra de búsqueda */}
-            <form className="header__busqueda">
+            {/* <form className="header__busqueda">
                 <div className="header__busqueda-contenedor">
                     <input
                         type="text"
@@ -44,7 +44,7 @@ export default function Header() {
                         <MdSearch size={24} />
                     </button>
                 </div>
-            </form>
+            </form> */}
 
             {/* Usuario y cesta */}
             <div className="header__usuario-cesta">
@@ -60,7 +60,7 @@ export default function Header() {
                 {menuUserVisible && (
                     <nav className="header__user-menu">
                     <ul>
-                        <li className='header__user-nombre'>{user.name}</li>
+                        <li className='header__user-nombre'>{user?.name}</li>
                         <li>Datos Personales</li>
                         <li>Historial</li>
                         <li>
