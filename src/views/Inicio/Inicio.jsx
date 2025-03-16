@@ -1,17 +1,26 @@
 import React from 'react'
+import useSWR from 'swr'
 import Producto from '../../components/Producto/Producto'
 import Sidebar from '../../components/Sidebar/Sidebar'
 
-import { productos as data } from '../../data/productos'
 import useUmamy from '../../hooks/useUmamy'
 
 import './Inicio.css'
+import Axios from '../../config/axios'
 
 export default function Inicio() {
   
   const { categoriaActual } = useUmamy();
 
-  const productos = data.filter(producto => producto.categoria_id === categoriaActual.id)
+  //Consulta SWR
+  const fetcher = () => Axios('/api/productos').then(data => data.data);
+  
+  const { data, error, isLoading } = useSWR('/api/productos', fetcher);
+  console.log(data);
+
+  if (isLoading) return 'Cargando ...'
+
+  const productos = data.data.filter(producto => producto.categoria_id === categoriaActual.id)
 
   return (
     <>
