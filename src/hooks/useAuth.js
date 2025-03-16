@@ -17,7 +17,7 @@ const useAuth = ({middleware, url}) => {
         })
         .then(res => res.data)
         .catch(error => {
-            throw Error(error?.response?.data?.errors)
+            throw Error(error?.response?.data?.errors);
         })
     );
 
@@ -27,6 +27,7 @@ const useAuth = ({middleware, url}) => {
             localStorage.setItem('AUTH_TOKEN', data.token);
             setErrores([]);
             await mutate();
+
         } catch (error) {
             setErrores(Object.values(error.response.data.errors));
         }
@@ -42,8 +43,18 @@ const useAuth = ({middleware, url}) => {
         }
     }
 
-    const logout = () => {
-
+    const logout = async () => {
+        try {
+            await Axios.post('/api/logout', null, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            localStorage.removeItem('AUTH_TOKEN');
+            await mutate(undefined);
+        } catch (error) {
+            throw Error(error?.response?.data?.errors);
+        }
     }
 
     console.log(user);
