@@ -70,6 +70,35 @@ const UmamyProvider = ({ children }) => {
         toast.error("Producto eliminado.")
     }
 
+    const handleSubmitNuevoPedido = async () => {
+        const token = localStorage.getItem('AUTH_TOKEN');
+
+        try {
+            const { data } = await Axios.post('/api/pedidos', {
+                total,
+                productos: pedido.map(producto => {
+                    return {
+                        id: producto.id,
+                        cantidad: producto.cantidad
+                    }
+                })
+            },
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+
+            toast.success(data.message);
+            setTimeout(() => {
+                setPedido([]);
+            }, 1000);
+            
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const handleEditarTotal = () => {
         const nuevoTotal = pedido.reduce( (total, producto) => (producto.precio * producto.cantidad) + total, 0)
         setTotal(nuevoTotal);
@@ -89,7 +118,8 @@ const UmamyProvider = ({ children }) => {
                 handleSetProducto,
                 handleAgregarPedido,
                 handleEditarCantidad,
-                handleEliminarProductoPedido
+                handleEliminarProductoPedido,
+                handleSubmitNuevoPedido
             }}
         >
             {children}

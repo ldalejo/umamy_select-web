@@ -7,9 +7,15 @@ import { formatearDinero } from '../../helpers';
 
 export default function Resumen() {
 
-  const { pedido, total } = useUmamy();
+  const { pedido, total, handleSubmitNuevoPedido } = useUmamy();
 
   const comprobarPedido = () => pedido.length === 0;
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    handleSubmitNuevoPedido();
+  }
 
   return (
     <aside className='pedido'>
@@ -34,7 +40,10 @@ export default function Resumen() {
           <p>Importe total: </p>
           <p>{formatearDinero(total)}</p>
         </article>
-        <form className='pedido__form'>
+        <form 
+          className='pedido__form'
+          onSubmit={handleSubmit}  
+        >
           <input 
             type="submit" 
             className='enviar-pedido'
