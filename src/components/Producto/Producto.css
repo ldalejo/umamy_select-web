@@ -10,7 +10,9 @@
 
 }
 .imagen {
-    width: 100%;
+    width: 90%;
+    margin: 10px;
+    border-radius: 20px;
 }
 
 .producto__contenido {

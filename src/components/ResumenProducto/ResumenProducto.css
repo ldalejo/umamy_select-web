@@ -22,6 +22,8 @@
 .resumenPedido__imagen {
     width: 50%;
     height: auto;
+    margin: 10px;
+    border-radius: 20px;
 }
 
 .resumenPedido__container-botones {
