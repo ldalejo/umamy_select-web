@@ -23,8 +23,14 @@ const UmamyProvider = ({ children }) => {
     }, []);
 
     const obtenerCategorias = async () => {
+        const token = localStorage.getItem('AUTH_TOKEN');
+
         try {
-            const {data} = await Axios('/api/categorias');
+            const {data} = await Axios('/api/categorias', {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                }
+            });
             setCategorias(data.data);
             setCategoriaActual(data.data[0]);
         } catch (error) {
@@ -106,17 +112,29 @@ const UmamyProvider = ({ children }) => {
 
     const handleCompletarPedido = async (id) => {
         const token = localStorage.getItem('AUTH_TOKEN');
-        console.log(token);
-        console.log(id);
-
         try {
-            const { data } = await Axios.put(`/api/pedidos/actualizar-pedido/${id}`, null, {
-                headers: {
-                    Accept: "application/json",
-                    Authorization: `Bearer ${token}`,
-                }
-            });
-            console.log(data);
+            const { data } = await Axios.put(`/api/pedidos/actualizar-pedido/${id}`, 
+                null, 
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    }
+                });
+        } catch (error) {
+            console.log(error.response);
+        }
+    }
+
+    const handleDisponibilidadProducto = async (id) => {
+        const token = localStorage.getItem('AUTH_TOKEN');
+        try {
+            const { data } = await Axios.put(`/api/productos/actualizar-producto/${id}`, 
+                null,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    }
+                });
         } catch (error) {
             console.log(error.response);
         }
@@ -138,7 +156,8 @@ const UmamyProvider = ({ children }) => {
                 handleEditarCantidad,
                 handleEliminarProductoPedido,
                 handleSubmitNuevoPedido,
-                handleCompletarPedido
+                handleCompletarPedido,
+                handleDisponibilidadProducto
             }}
         >
             {children}
