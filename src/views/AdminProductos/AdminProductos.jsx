@@ -1,7 +1,6 @@
 import React from 'react'
 import useSWR from "swr";
 import Axios from "../../config/axios";
-import { formatearDinero } from "../../helpers";
 import useUmamy from "../../hooks/useUmamy";
 import Producto from '../../components/Producto/Producto';
 import Sidebar from '../../components/Sidebar/Sidebar';
