@@ -29,8 +29,7 @@ export default function HistorialPedidos() {
 
     return (
       <section className=''>
-        <h1>Pedidos</h1>
-        <p>Vista para administrar los pedidos.</p>
+        <h1>Historial de Pedidos</h1>
   
         <article className="contenedor__admin-pedidos">
           {data.data.data.map(pedido => (
