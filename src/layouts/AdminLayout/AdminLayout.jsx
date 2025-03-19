@@ -12,8 +12,8 @@ export default function AdminLayout() {
     return (
         <div className='layout'>
             <AdminHeader />
-            <main className='main__layout'>
-            <section className='section__layout'>
+            <main className='main__admin-layout'>
+            <section className='section__admin-layout'>
                 <Outlet />
             </section>
             </main>
