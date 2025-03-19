@@ -33,3 +33,17 @@
     background-color: var(--naranja-calabaza);
     cursor: pointer;
 }
+
+.producto__boton-agotado{
+    width: 150px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    background-color: var(--rojo-tomate);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .producto {
+        max-width: 250px;
+    }
+}

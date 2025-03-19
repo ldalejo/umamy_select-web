@@ -23,8 +23,14 @@ const UmamyProvider = ({ children }) => {
     }, []);
 
     const obtenerCategorias = async () => {
+        const token = localStorage.getItem('AUTH_TOKEN');
+
         try {
-            const {data} = await Axios('/api/categorias');
+            const {data} = await Axios('/api/categorias', {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                }
+            });
             setCategorias(data.data);
             setCategoriaActual(data.data[0]);
         } catch (error) {
@@ -74,7 +80,7 @@ const UmamyProvider = ({ children }) => {
         const token = localStorage.getItem('AUTH_TOKEN');
 
         try {
-            const { data } = await Axios.post('/api/pedidos', {
+            const { data } = await Axios.post('/api/pedidos/guardar-pedido', {
                 total,
                 productos: pedido.map(producto => {
                     return {
@@ -104,6 +110,51 @@ const UmamyProvider = ({ children }) => {
         setTotal(nuevoTotal);
     }
 
+    const handleCompletarPedido = async (id) => {
+        const token = localStorage.getItem('AUTH_TOKEN');
+        try {
+            const { data } = await Axios.put(`/api/pedidos/actualizar-pedido/${id}`, 
+                null, 
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    }
+                });
+        } catch (error) {
+            console.log(error.response);
+        }
+    }
+
+    const handleDisponibilidadProducto = async (id) => {
+        const token = localStorage.getItem('AUTH_TOKEN');
+        try {
+            const { data } = await Axios.put(`/api/productos/actualizar-producto/${id}`, 
+                null,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    }
+                });
+        } catch (error) {
+            console.log(error.response);
+        }
+    }
+
+    const handleCobrarPedido = async (id) => {
+        const token = localStorage.getItem('AUTH_TOKEN');
+        try {
+            const { data } = await Axios.put(`/api/pedidos/cobrar-pedido/${id}`, 
+                null,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    }
+                });
+        } catch (error) {
+            console.log(error.response);
+        }
+    }
+
     return (
         <UmamyContext.Provider
             value={{
@@ -119,7 +170,10 @@ const UmamyProvider = ({ children }) => {
                 handleAgregarPedido,
                 handleEditarCantidad,
                 handleEliminarProductoPedido,
-                handleSubmitNuevoPedido
+                handleSubmitNuevoPedido,
+                handleCompletarPedido,
+                handleDisponibilidadProducto,
+                handleCobrarPedido
             }}
         >
             {children}

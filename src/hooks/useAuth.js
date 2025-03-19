@@ -63,6 +63,14 @@ const useAuth = ({middleware, url}) => {
             navigate(url);
         }
 
+        if (middleware === 'guest' && user && user.rol_id === 1) {
+            navigate('/admin');
+        }
+
+        if (middleware === 'admin' && user && user.rol_id !== 1) {
+            navigate('/');
+        }
+
         if (middleware === 'auth' && error) {
             navigate('/auth/login');
         }

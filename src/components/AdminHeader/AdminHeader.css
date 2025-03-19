@@ -1,4 +1,4 @@
-.header {
+.admin-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -6,7 +6,7 @@
     color: black;
 }
 
-.header__contenido {
+.admin-header__contenido {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,54 +15,18 @@
     margin: 0 auto;
 }
 
-.header__logo {
+.admin-header__logo {
     display: flex;
     align-items: center;
     cursor: pointer;
 }
 
-.header__logo-imagen {
+.admin-header__logo-imagen {
     width: auto;
     height: 5rem;
 }
 
-/* .header__busqueda {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-} */
-
-.header__busqueda-contenedor {
-    display: flex;
-    position: relative; /* Permite posicionar el botón dentro del input */
-  }
-
-.header__busqueda-input {  
-    padding: 5px 40px 5px 10px; /* Deja espacio para el botón dentro */
-    font-size: 16px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    min-width: 25rem;
-}
-
-.header__busqueda-boton {
-    position: absolute;
-    right: 10px; /* Ajusta la posición del botón dentro del input */
-    top: 60%;
-    transform: translateY(-50%); /* Centra verticalmente */
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.header__usuario-cesta {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 15px;
-}
-
-.header__usuario {
+.admin-header__usuario {
     font-size: 18px;
     background: none;
     border: none;
@@ -70,7 +34,7 @@
     color: var(--negro-suave);
 }
 
-.header__user-menu {
+.admin-header__user-menu {
     position: absolute;
     top: 100%; /* Posicionar el menu justo abajo del header */
     left: -180px; /* Lo movemos hacia la izquierda (ajustar según el diseño) */
@@ -82,7 +46,7 @@
     z-index: 200;
 }
 
-.header__user-menu ul {
+.admin-header__user-menu ul {
     list-style-type: none;
     padding: 10px;
     margin: 0;
@@ -97,44 +61,32 @@
     text-decoration: none;
 }
 
-.header__user-menu ul li {
+.admin-header__user-menu ul li {
     padding: 10px 15px;
     cursor: pointer;
 }
 
-.header__user-menu ul li:hover {
+.admin-header__user-menu ul li:hover {
     color:  var(--naranja-oscuro);
 }
 
-.header__user-menu ul li button {
+.admin-header__user-menu ul li button {
     background: none;
     border: none;
     color: var(--rojo-tomate);
     cursor: pointer;
 }
   
-.header__user-menu ul li button:hover {
+.admin-header__user-menu ul li button:hover {
     color: var(--rojo-oscuro);
 }
 
-.header__pedido-boton {
-    display: none;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    color: var(--negro-suave);
-}
-
-.header__boton:focus {
-    text-decoration: underline;
-}
-
-.header__user-nombre {
+.admin-header__user-nombre {
     text-transform: uppercase;
     color: var(--naranja-oscuro);
     cursor: default !important;
 }
 
-.header__user-menu-button {
+.admin-header__user-menu-button {
     padding: 0;
 }

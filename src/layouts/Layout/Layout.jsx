@@ -16,7 +16,7 @@ Modal.setAppElement('#root');
 
 export default function Layout() {
 
-  const { user, error } = useAuth({middleware: 'auth'});
+  useAuth({middleware: 'auth'});
   const { modal, handleClickModal } = useUmamy();
 
   return (

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom';
 import { MdSearch, MdShoppingCart, MdAccountCircle } from "react-icons/md";
 import useAuth from '../../hooks/useAuth';
 
@@ -61,10 +62,21 @@ export default function Header() {
                     <nav className="header__user-menu">
                     <ul>
                         <li className='header__user-nombre'>{user?.name}</li>
-                        <li>Datos Personales</li>
-                        <li>Historial</li>
+                        <Link
+                            to="/" 
+                            className='link'
+                        >
+                            <li>Datos Personales</li>
+                        </Link>
+                        <Link
+                            to="/" 
+                            className='link'
+                        >
+                            <li>Historial</li>
+                        </Link>
                         <li>
                             <button
+                                className='header__user-menu-button'
                                 onClick={logout}
                             >
                                 Cerrar Sesión

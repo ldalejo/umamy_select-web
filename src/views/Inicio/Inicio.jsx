@@ -13,10 +13,15 @@ export default function Inicio() {
   const { categoriaActual } = useUmamy();
 
   //Consulta SWR
-  const fetcher = () => Axios('/api/productos').then(data => data.data);
+  const token = localStorage.getItem('AUTH_TOKEN');
+  const fetcher = () => Axios('/api/productos-disponibles', {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  })
+  .then(data => data.data);
   
-  const { data, error, isLoading } = useSWR('/api/productos', fetcher);
-  console.log(data);
+  const { data, error, isLoading } = useSWR('/api/productos-disponibles', fetcher);
 
   if (isLoading) return 'Cargando ...'
 
@@ -33,7 +38,11 @@ export default function Inicio() {
 
         <article className='contenedor__productos'>
           {productos.map((producto) => (
-            <Producto key={producto.id} producto={producto}/>
+            <Producto 
+              key={producto.id} 
+              producto={producto}
+              botonAgregar={true}
+            />
           ))}
         </article>
       </section>
