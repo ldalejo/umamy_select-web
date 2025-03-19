@@ -21,15 +21,18 @@ export default function AdminHeader() {
       <div className="admin-header__contenido">
 
         {/* Logo */}
-        <div className="admin-header__logo">
+        <Link 
+          className="admin-header__logo"
+          to="/admin"  
+        >
           <img
             src="/img/logo_pequeno.svg"
             alt="Logo"
             className="admin-header__logo-imagen"
           />
-        </div>
+        </Link>
 
-        {/* Usuario y cesta */}
+        {/* Admin */}
         <div className="admin-header__usuario-cesta">
           <button 
             className="header__usuario" 
@@ -39,19 +42,37 @@ export default function AdminHeader() {
             <MdAccountCircle size={40} />
           </button>
 
-          {/* Menú desplegable de usuario */}
+          {/* Menú desplegable del admin */}
           {menuUserVisible && (
-            <nav className="header__user-menu">
+            <nav className="admin-header__user-menu">
               <ul>
-                <li className="header__user-nombre">{user?.name}</li>
+                <li className="admin-header__user-nombre">{user?.name}</li>
                 <li>
-                  <Link to="/admin" onClick={handlerMenuUser}>Pedidos</Link>
+                  <Link
+                      to="/admin" 
+                      className='link'
+                      onClick={handlerMenuUser}
+                    >
+                      Pedidos
+                    </Link>
                 </li>
                 <li>
-                  <Link to="/admin/completados" onClick={handlerMenuUser}>Pedidos completados</Link>
+                  <Link
+                      to="/admin/completados"
+                      className='link'
+                      onClick={handlerMenuUser}
+                    >
+                      Pedidos completados
+                    </Link>
                 </li>
                 <li>
-                  <Link to="/admin/productos" onClick={handlerMenuUser}>Productos</Link>
+                  <Link
+                      to="/admin/productos"
+                      className='link'
+                      onClick={handlerMenuUser}
+                    >
+                      Productos
+                    </Link>
                 </li>
                 <li>
                   <button onClick={logout}>Cerrar Sesión</button>

@@ -52,6 +52,15 @@
     margin: 0;
 }
 
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover{
+    text-decoration: none;
+}
+
 .admin-header__user-menu ul li {
     padding: 10px 15px;
     cursor: pointer;
@@ -72,7 +81,8 @@
     color: var(--rojo-oscuro);
 }
 
-.header__user-nombre {
+.admin-header__user-nombre {
     text-transform: uppercase;
     color: var(--naranja-oscuro);
+    cursor: default !important;
 }
