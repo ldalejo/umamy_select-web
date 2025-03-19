@@ -69,7 +69,7 @@ export default function Header() {
                             <li>Datos Personales</li>
                         </Link>
                         <Link
-                            to="/" 
+                            to={`/historial-pedidos/${user.id}`} 
                             className='link'
                         >
                             <li>Historial</li>
