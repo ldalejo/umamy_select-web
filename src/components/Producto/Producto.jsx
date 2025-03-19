@@ -41,10 +41,10 @@ export default function Producto({producto, botonAgregar = false, botonDisponibi
               DISPONIBLE
             </button>
           )}
-          {!botonDisponibilidad && !botonAgregar && (
+          {Boolean(!botonDisponibilidad && !botonAgregar) && (
             <button
               type="button"
-              className="producto__boton"
+              className="producto__boton-agotado"
               onClick={() => handleDisponibilidadProducto(producto.id)}
             >
               AGOTADO

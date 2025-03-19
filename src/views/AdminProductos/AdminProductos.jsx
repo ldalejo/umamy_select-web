@@ -40,7 +40,7 @@ export default function AdminProductos() {
             <Producto 
                 key={producto.id} 
                 producto={producto} 
-                botonDisponibilidad={producto.disponible}
+                botonDisponibilidad={Boolean(producto.disponible)}
             />
           ))}
         </article>
