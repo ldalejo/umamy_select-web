@@ -86,3 +86,7 @@
     color: var(--naranja-oscuro);
     cursor: default !important;
 }
+
+.admin-header__user-menu-button {
+    padding: 0;
+}

@@ -88,6 +88,15 @@
     margin: 0;
 }
 
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover{
+    text-decoration: none;
+}
+
 .header__user-menu ul li {
     padding: 10px 15px;
     cursor: pointer;
@@ -109,6 +118,7 @@
 }
 
 .header__pedido-boton {
+    display: none;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -122,4 +132,9 @@
 .header__user-nombre {
     text-transform: uppercase;
     color: var(--naranja-oscuro);
+    cursor: default !important;
+}
+
+.header__user-menu-button {
+    padding: 0;
 }

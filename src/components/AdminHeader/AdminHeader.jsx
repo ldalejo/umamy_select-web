@@ -75,7 +75,10 @@ export default function AdminHeader() {
                     </Link>
                 </li>
                 <li>
-                  <button onClick={logout}>Cerrar Sesión</button>
+                  <button 
+                    className='admin-header__user-menu-button'
+                    onClick={logout}
+                  >Cerrar Sesión</button>
                 </li>
               </ul>
             </nav>
