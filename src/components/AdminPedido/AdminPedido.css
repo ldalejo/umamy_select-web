@@ -38,6 +38,7 @@
     font-weight: bold;
     transition: background-color 0.3s;
     margin-top: 1rem;
+    text-transform: uppercase;
 }
 
 .pedido__boton:hover {

@@ -6,9 +6,11 @@ import './AdminPedido.css'
 
 export default function AdminPedido({ pedido }) {
 
-    const { handleCompletarPedido } = useUmamy();
+    const { handleCompletarPedido, handleCobrarPedido } = useUmamy();
 
-    const { id, user, productos, total } = pedido;
+    const { id, user, productos, total, estado, cobrado } = pedido;
+
+    console.log(estado, cobrado)
 
     return (
       <article className='admin-pedido'>
@@ -22,16 +24,30 @@ export default function AdminPedido({ pedido }) {
             </li>
           ))}
         </ul>
-  
         <p>TOTAL A PAGAR: <span>{formatearDinero(total)}</span></p>
-  
-        <button 
-          type='button'
-          className='pedido__boton'
-          onClick={() => handleCompletarPedido(id)}
-        >
-          Completar
-        </button>
+        {
+            estado == 0 && cobrado == 0 && (
+                <button 
+                    type='button'
+                    className='pedido__boton'
+                    onClick={() => handleCompletarPedido(id)}
+                >
+                    Completar
+                </button>
+            )
+        }
+        {
+            estado == 1 && cobrado == 0 &&( 
+                <button 
+                    type='button'
+                    className='pedido__boton'
+                    onClick={() => handleCobrarPedido(id)}
+                >
+                    Cobrar
+                </button>
+            )
+        }
+
       </article>
     );
   }

@@ -7,6 +7,7 @@ import Registro from './views/Registro';
 import AdminLayout from './layouts/AdminLayout/AdminLayout';
 import AdminPedidos from './views/AdminPedidos/AdminPedidos';
 import AdminProductos from './views/AdminProductos/AdminProductos';
+import AdminPedidosCompletados from './views/AdminPedidosCompletados/AdminPedidosCompletados';
 
 const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <AdminPedidos />
+            },
+            {
+                path: '/admin/completados',
+                element: <AdminPedidosCompletados />
             },
             {
                 path: '/admin/productos',

@@ -45,10 +45,13 @@ export default function AdminHeader() {
               <ul>
                 <li className="header__user-nombre">{user?.name}</li>
                 <li>
-                  <Link to="/admin">Pedidos</Link>
+                  <Link to="/admin" onClick={handlerMenuUser}>Pedidos</Link>
                 </li>
                 <li>
-                  <Link to="/admin/productos">Productos</Link>
+                  <Link to="/admin/completados" onClick={handlerMenuUser}>Pedidos completados</Link>
+                </li>
+                <li>
+                  <Link to="/admin/productos" onClick={handlerMenuUser}>Productos</Link>
                 </li>
                 <li>
                   <button onClick={logout}>Cerrar Sesión</button>
