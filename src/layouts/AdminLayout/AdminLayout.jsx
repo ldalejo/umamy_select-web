@@ -3,6 +3,8 @@ import { Outlet } from 'react-router-dom';
 import AdminHeader from '../../components/AdminHeader/AdminHeader';
 import useAuth from '../../hooks/useAuth';
 
+import './AdminLayout.css'
+
 export default function AdminLayout() {
 
     useAuth({middleware: 'admin'});
@@ -10,8 +12,8 @@ export default function AdminLayout() {
     return (
         <div className='layout'>
             <AdminHeader />
-            <main className=''>
-            <section className=''>
+            <main className='main__layout'>
+            <section className='section__layout'>
                 <Outlet />
             </section>
             </main>

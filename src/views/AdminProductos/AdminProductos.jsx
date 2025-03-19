@@ -6,6 +6,8 @@ import useUmamy from "../../hooks/useUmamy";
 import Producto from '../../components/Producto/Producto';
 import Sidebar from '../../components/Sidebar/Sidebar';
 
+import './AdminProductos.css'
+
 export default function AdminProductos() {
 
     const { categoriaActual } = useUmamy();
@@ -28,7 +30,7 @@ export default function AdminProductos() {
 
   return (
     <>
-      <section>
+      <section className=''>
         <Sidebar />
         <h1>{categoriaActual.nombre}</h1>
         <p>Vista para administrar los productos.</p>
