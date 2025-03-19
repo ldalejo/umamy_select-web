@@ -29,19 +29,22 @@ export default function AdminProductos() {
 
   return (
     <>
-      <section className=''>
-        <Sidebar />
-        <h1>{categoriaActual.nombre}</h1>
-        <p>Vista para administrar los productos.</p>
-
-        <article className="contenedor__productos">
-          {productos.map((producto) => (
-            <Producto 
-                key={producto.id} 
-                producto={producto} 
-                botonDisponibilidad={Boolean(producto.disponible)}
-            />
-          ))}
+      <section className='admin-productos__section'>
+        <article className='admin-productos__section-sidebar'>
+          <Sidebar />
+        </article>
+        <article className='admin-productos__contenedor-productos'>
+          <h1 className='admin-productos__h1'>{categoriaActual.nombre}</h1>
+          <p className='admin-productos__p'>Vista para administrar los productos.</p>
+          <article className="admin-productos__productos">
+            {productos.map((producto) => (
+              <Producto 
+                  key={producto.id} 
+                  producto={producto} 
+                  botonDisponibilidad={Boolean(producto.disponible)}
+              />
+            ))}
+          </article>
         </article>
       </section>
     </>

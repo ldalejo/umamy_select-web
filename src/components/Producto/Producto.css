@@ -41,3 +41,9 @@
     background-color: var(--rojo-tomate);
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    .producto {
+        max-width: 250px;
+    }
+}
