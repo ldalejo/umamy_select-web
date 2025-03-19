@@ -8,6 +8,8 @@ import AdminLayout from './layouts/AdminLayout/AdminLayout';
 import AdminPedidos from './views/AdminPedidos/AdminPedidos';
 import AdminProductos from './views/AdminProductos/AdminProductos';
 import AdminPedidosCompletados from './views/AdminPedidosCompletados/AdminPedidosCompletados';
+import HistorialPedidos from './views/HistorialPedidos/HistorialPedidos';
+import ClienteLayout from './layouts/ClienteLayout/ClienteLayout';
 
 const router = createBrowserRouter([
     {
@@ -17,6 +19,16 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Inicio />
+            }
+        ]
+    },
+    {
+        path: '/',
+        element: <ClienteLayout />,
+        children: [
+            {
+                path: '/historial-pedidos/:usuario_id',
+                element: <HistorialPedidos/>
             }
         ]
     },

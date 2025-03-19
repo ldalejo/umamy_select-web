@@ -1,0 +1,14 @@
+.contenedor__admin-pedidos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    .contenedor__admin-pedidos {
+        grid-template-columns: 1fr;
+    }
+}
+
+
