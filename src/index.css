@@ -6,8 +6,8 @@
   min-width: 0;
 }
 
-/* -- Paleta de colores -- */
 :root {
+  /* -- Paleta de colores -- */
   --naranja-calabaza: #FF7F11;
   --naranja-oscuro: #e67608;
   --naranja-claro: #fff8f0;
@@ -18,6 +18,12 @@
   --gris-suave: #F5F5F5;
   --negro-suave: #333333;
   --blanco-puro: #FFFFFF;
+
+  /* Breakpoints */
+  --breakpoint-movil-s: 480px;
+  --breakpoint-movil-xl: 768px;
+  --breakpoint-tablet: 900px;
+  --breakpoint-escritorio: 1280px;
 }
 
 /*
@@ -94,3 +100,4 @@ input:focus, select:focus, textarea:focus {
   border: 1px solid var(--naranja-calabaza);
   background-color: var(--naranja-claro);
 }
+
