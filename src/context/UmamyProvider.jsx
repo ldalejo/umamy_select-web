@@ -173,7 +173,8 @@ const UmamyProvider = ({ children }) => {
                 }
             });
 
-            toast.success(data.message);            
+            toast.success(data.message);
+
         } catch (error) {
             console.log(error);
         }

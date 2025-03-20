@@ -2,11 +2,11 @@ import React from 'react'
 import useSWR from 'swr'
 import Producto from '../../components/Producto/Producto'
 import Sidebar from '../../components/Sidebar/Sidebar'
-
 import useUmamy from '../../hooks/useUmamy'
+import Loader from "../../components/Loader/Loader";
+import Axios from '../../config/axios'
 
 import './Inicio.css'
-import Axios from '../../config/axios'
 
 export default function Inicio() {
   
@@ -23,9 +23,11 @@ export default function Inicio() {
   
   const { data, error, isLoading } = useSWR('/api/productos-disponibles', fetcher,  {refreshInterval: 1000});
 
-  if (isLoading) return 'Cargando ...'
-
   const productos = data?.data?.filter(producto => producto.categoria_id === categoriaActual.id)
+
+  if (isLoading || !data || productos.length === 0) {
+    return <Loader/>
+  }
 
   return (
     <>
