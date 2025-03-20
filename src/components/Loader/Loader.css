@@ -1,0 +1,23 @@
+.loader__contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+}
+
+.loader__contenedor svg {
+    animation: spin 3s linear infinite; /* Animación de rotación */
+    color: var(--naranja-calabaza);
+    font-size: 100px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

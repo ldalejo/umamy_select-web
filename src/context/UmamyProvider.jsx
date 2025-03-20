@@ -12,6 +12,7 @@ const UmamyProvider = ({ children }) => {
     const [producto , setProducto] = useState({});
     const [pedido, setPedido] = useState([]);
     const [total, setTotal] = useState(0);
+    const [disabled, setDisabled] = useState(false);
 
     /* Cada vez que el pedido se modifique, se actualiza el montante total */
     useEffect(() => {
@@ -111,6 +112,7 @@ const UmamyProvider = ({ children }) => {
     }
 
     const handleCompletarPedido = async (id) => {
+        setDisabled(true);
         const token = localStorage.getItem('AUTH_TOKEN');
         try {
             const { data } = await Axios.put(`/api/pedidos/actualizar-pedido/${id}`, 
@@ -123,6 +125,7 @@ const UmamyProvider = ({ children }) => {
         } catch (error) {
             console.log(error.response);
         }
+        setDisabled(false);
     }
 
     const handleDisponibilidadProducto = async (id) => {
@@ -141,6 +144,7 @@ const UmamyProvider = ({ children }) => {
     }
 
     const handleCobrarPedido = async (id) => {
+        setDisabled(true);
         const token = localStorage.getItem('AUTH_TOKEN');
         try {
             const { data } = await Axios.put(`/api/pedidos/cobrar-pedido/${id}`, 
@@ -153,6 +157,7 @@ const UmamyProvider = ({ children }) => {
         } catch (error) {
             console.log(error.response);
         }
+        setDisabled(false);
     }
 
     const handleDatosUsuarioSubmit = async (id, datosUsuario) => {
@@ -168,7 +173,8 @@ const UmamyProvider = ({ children }) => {
                 }
             });
 
-            toast.success(data.message);            
+            toast.success(data.message);
+
         } catch (error) {
             console.log(error);
         }
@@ -183,6 +189,7 @@ const UmamyProvider = ({ children }) => {
                 producto,
                 pedido,
                 total,
+                disabled,
                 handleClickCategoria,
                 handleClickModal,
                 handleSetProducto,

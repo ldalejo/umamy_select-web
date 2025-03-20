@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import useUmamy from '../../hooks/useUmamy';
 
 import './Pedido.css'
@@ -7,13 +7,29 @@ import { formatearDinero } from '../../helpers';
 
 export default function Resumen() {
 
+  const [disabled, setDisabled] = useState(true);
+  const [valorBoton, setValorBoton] = useState('');
+
   const { pedido, total, handleSubmitNuevoPedido } = useUmamy();
 
-  const comprobarPedido = () => pedido.length === 0;
+  useEffect(() => {
+    comprobarPedido();
+
+  }, [pedido]);
+
+  const comprobarPedido = () => {
+    if (pedido.length === 0) {
+      setDisabled(true);
+    } else {
+      setDisabled(false);
+    }
+    setValorBoton("CONFIRMAR");
+  }
 
   const handleSubmit = e => {
+    setValorBoton('PROCESANDO...');
     e.preventDefault();
-
+    setDisabled(true);
     handleSubmitNuevoPedido();
   }
 
@@ -47,8 +63,8 @@ export default function Resumen() {
           <input 
             type="submit" 
             className='enviar-pedido'
-            value='Confirmar pedido'
-            disabled={comprobarPedido()}
+            value={valorBoton}
+            disabled={disabled}
           />
         </form>
       </section>
