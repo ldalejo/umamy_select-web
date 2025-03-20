@@ -21,13 +21,16 @@ export default function Header() {
 
         <div className="header__contenido">
             {/* Logo */}
-            <div className="header__logo">
+            <Link 
+                className="header__logo"
+                to="/"  
+            >
                 <img
                     src="/img/logo_pequeno.svg" 
                     alt="Logo"
                     className="header__logo-imagen"
                 />
-            </div>
+            </Link>
 
             {/* Barra de búsqueda */}
             {/* <form className="header__busqueda">
@@ -63,7 +66,7 @@ export default function Header() {
                     <ul>
                         <li className='header__user-nombre'>{user?.name}</li>
                         <Link
-                            to="/" 
+                            to={`/datos-personales/${user.id}`}
                             className='link'
                         >
                             <li>Datos Personales</li>
