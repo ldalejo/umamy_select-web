@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react'
 import useSWR from "swr";
 import Axios from "../../config/axios";
 import { useParams } from "react-router-dom";
+import Loader from "../../components/Loader/Loader";
+import useUmamy from "../../hooks/useUmamy";
 
 import './DatosPersonales.css'
-import useUmamy from "../../hooks/useUmamy";
 
 export default function DatosPersonales() {
 
@@ -42,8 +43,8 @@ export default function DatosPersonales() {
         });
     };
 
-    if (isLoading) {
-      return "Cargando...";
+    if (isLoading || !data) {
+        return <Loader/>
     }
 
     const handleSubmit = (e) => {
