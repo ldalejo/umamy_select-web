@@ -46,13 +46,14 @@ const useAuth = ({middleware, url}) => {
 
     const logout = async () => {
         try {
-            await Axios.post('/api/logout', null, {
+            const { data } = await Axios.post('/api/logout', null, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             });
             localStorage.removeItem('AUTH_TOKEN');
-            await mutate(undefined);
+            await mutate(null);
+            navigate('/auth/login');
         } catch (error) {
             throw Error(error?.response?.data?.errors);
         }
