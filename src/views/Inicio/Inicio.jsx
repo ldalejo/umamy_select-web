@@ -21,7 +21,7 @@ export default function Inicio() {
   })
   .then(data => data.data);
   
-  const { data, error, isLoading } = useSWR('/api/productos-disponibles', fetcher);
+  const { data, error, isLoading } = useSWR('/api/productos-disponibles', fetcher,  {refreshInterval: 1000});
 
   if (isLoading) return 'Cargando ...'
 
