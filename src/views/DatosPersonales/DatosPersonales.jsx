@@ -11,6 +11,7 @@ export default function DatosPersonales() {
 
     const [datosUsuario, setDatosUsuario] = useState(null);
     const [datosFormulario, setDatosFormulario] = useState({});
+    const [disabled, setDisabled] = useState(false);
 
     const { handleDatosUsuarioSubmit } = useUmamy();
 
@@ -47,7 +48,9 @@ export default function DatosPersonales() {
 
     const handleSubmit = (e) => {
         e.preventDefault(); 
+        setDisabled(true);
         handleDatosUsuarioSubmit(usuario_id, datosFormulario);
+        setDisabled(false);
     };
 
     return (
@@ -62,7 +65,7 @@ export default function DatosPersonales() {
                         name="nombre"
                         placeholder="Nombre"
                         className="formulario-personal__input"
-                        value={datosFormulario.nombre}
+                        value={datosFormulario.nombre ?? ''}
                         onChange={handleChange}
                     />
                 </div>
@@ -74,7 +77,7 @@ export default function DatosPersonales() {
                         name="apellido"
                         placeholder="Apellido"
                         className="formulario-personal__input"
-                        value={datosFormulario.apellido}
+                        value={datosFormulario.apellido ?? ''}
                         onChange={handleChange}
                     />
                 </div>
@@ -99,7 +102,7 @@ export default function DatosPersonales() {
                         name="telefono"
                         placeholder="Teléfono"
                         className="formulario-personal__input"
-                        value={datosFormulario.telefono}
+                        value={datosFormulario.telefono ?? ''}
                         onChange={handleChange}
                     />
                 </div>
@@ -111,7 +114,7 @@ export default function DatosPersonales() {
                         name="direccion"
                         placeholder="Dirección"
                         className="formulario-personal__input"
-                        value={datosFormulario.direccion}
+                        value={datosFormulario.direccion ?? ''}
                         onChange={handleChange}
                     />
                 </div>
@@ -123,7 +126,7 @@ export default function DatosPersonales() {
                         name="ciudad"
                         placeholder="Ciudad"
                         className="formulario-personal__input"
-                        value={datosFormulario.ciudad}
+                        value={datosFormulario.ciudad ?? ''}
                         onChange={handleChange}
                     />
                 </div>
@@ -135,7 +138,21 @@ export default function DatosPersonales() {
                         name="provincia"
                         placeholder="Provincia"
                         className="formulario-personal__input"
-                        value={datosFormulario.provincia}
+                        value={datosFormulario.provincia ?? ''}
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <div className="formulario-personal__grupo">
+                    <label className="formulario-personal__label">
+                        País:
+                    </label>
+                    <input
+                        type="text"
+                        name="pais"
+                        placeholder="País"
+                        className="formulario-personal__input"
+                        value={datosFormulario.pais ?? ''}
                         onChange={handleChange}
                     />
                 </div>
@@ -146,17 +163,17 @@ export default function DatosPersonales() {
                     </label>
                     <input
                         type="text"
-                        name="codigoPostal"
+                        name="codigo_postal"
                         placeholder="Códio postal"
                         className="formulario-personal__input"
-                        value={datosFormulario.codigoPostal}
+                        value={datosFormulario.codigo_postal ?? ''}
                         onChange={handleChange}
                     />
                 </div>
 
                 <div className="formulario-personal__contenedor-button">
-                    <button className="formulario-personal__boton">
-                        Guardar Cambios
+                    <button className="formulario-personal__boton" disabled={disabled}>
+                        {disabled ? "Guardando..." : "Guardar Cambios"}
                     </button>
                 </div>
             </form>
