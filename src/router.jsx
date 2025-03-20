@@ -10,6 +10,7 @@ import AdminProductos from './views/AdminProductos/AdminProductos';
 import AdminPedidosCompletados from './views/AdminPedidosCompletados/AdminPedidosCompletados';
 import HistorialPedidos from './views/HistorialPedidos/HistorialPedidos';
 import ClienteLayout from './layouts/ClienteLayout/ClienteLayout';
+import DatosPersonales from './views/DatosPersonales/DatosPersonales';
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
             {
                 path: '/historial-pedidos/:usuario_id',
                 element: <HistorialPedidos/>
+            },
+            {
+                path: '/datos-personales/:usuario_id',
+                element: <DatosPersonales/>
             }
         ]
     },
