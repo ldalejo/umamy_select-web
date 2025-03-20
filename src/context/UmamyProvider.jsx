@@ -155,6 +155,25 @@ const UmamyProvider = ({ children }) => {
         }
     }
 
+    const handleDatosUsuarioSubmit = async (id, datosUsuario) => {
+        const token = localStorage.getItem('AUTH_TOKEN');
+
+        try {
+            const { data } = await Axios.put(`/api/actualizar-datos-usuario/${id}`, {
+                datosUsuario
+            },
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+
+            toast.success(data.message);            
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <UmamyContext.Provider
             value={{
@@ -173,7 +192,8 @@ const UmamyProvider = ({ children }) => {
                 handleSubmitNuevoPedido,
                 handleCompletarPedido,
                 handleDisponibilidadProducto,
-                handleCobrarPedido
+                handleCobrarPedido,
+                handleDatosUsuarioSubmit
             }}
         >
             {children}

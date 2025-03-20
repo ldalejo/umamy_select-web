@@ -2,16 +2,14 @@ import React from "react";
 import useSWR from "swr";
 import Axios from "../../config/axios";
 import ClientePedido from "../../components/ClientePedido/ClientePedido";
+import { useParams } from "react-router-dom";
 
 import './HistorialPedidos.css'
-import { useParams } from "react-router-dom";
 
 export default function HistorialPedidos() {
 
     const token = localStorage.getItem('AUTH_TOKEN');
     const { usuario_id } = useParams();
-
-    console.log(usuario_id)
 
     const fetcher = () => Axios.get(`/api/pedidos-usuario/${usuario_id}`, {
       headers: {
@@ -19,7 +17,7 @@ export default function HistorialPedidos() {
       },
     });
   
-    const { data, error, isLoading } = useSWR(`/api/pedidos-usuario/${usuario_id}`, fetcher, { refreshInterval: 1000 });
+    const { data, error, isLoading } = useSWR(`/api/pedidos-usuario/${usuario_id}`, fetcher, { revalidateOnFocus: false });
   
     if (isLoading) {
       return 'Cargando...';
