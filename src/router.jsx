@@ -11,6 +11,7 @@ import AdminPedidosCompletados from './views/AdminPedidosCompletados/AdminPedido
 import HistorialPedidos from './views/HistorialPedidos/HistorialPedidos';
 import ClienteLayout from './layouts/ClienteLayout/ClienteLayout';
 import DatosPersonales from './views/DatosPersonales/DatosPersonales';
+import AdminAnadirProductos from './views/AdminAnadirProductos/AdminAnadirProductos';
 
 const router = createBrowserRouter([
     {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
             {
                 path: '/admin/productos',
                 element: <AdminProductos />
+            },
+            {
+                path: '/admin/productos/anadir-nuevo-producto',
+                element: <AdminAnadirProductos />
             }
         ]
     }

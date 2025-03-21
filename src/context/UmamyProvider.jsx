@@ -180,6 +180,25 @@ const UmamyProvider = ({ children }) => {
         }
     }
 
+    const handleAnadirProductoSubmit = async (datosProducto, reset) => {
+        const token = localStorage.getItem('AUTH_TOKEN');
+        try {
+            const { data } = await Axios.post('/api/producto/anadir-producto', datosProducto,
+        {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'multipart/form-data',
+            }
+        });
+
+        toast.success(data.message);
+        reset();
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <UmamyContext.Provider
             value={{
@@ -200,7 +219,8 @@ const UmamyProvider = ({ children }) => {
                 handleCompletarPedido,
                 handleDisponibilidadProducto,
                 handleCobrarPedido,
-                handleDatosUsuarioSubmit
+                handleDatosUsuarioSubmit,
+                handleAnadirProductoSubmit
             }}
         >
             {children}
