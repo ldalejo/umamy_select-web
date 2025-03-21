@@ -1,0 +1,33 @@
+.footer {
+    background-color: var(--negro-suave);
+    color: var(--blanco-puro);
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .footer__icono-social {
+    color: var(--blanco-puro);
+    transition: color 0.3s;
+  }
+  
+  .footer__icono-social:hover {
+    color: var(--naranja-calabaza);
+  }
+  
+  .footer__info p {
+    margin: 0;
+    font-size: 14px;
+  }
