@@ -10,6 +10,7 @@ import './Layout.css';
 
 import useUmamy from '../../hooks/useUmamy';
 import useAuth from '../../hooks/useAuth';
+import Footer from '../../components/Footer/Footer';
 
 // Establece el elemento principal para mejorar la accesibilidad y el manejo del foco en el modal.
 Modal.setAppElement('#root');
@@ -29,6 +30,7 @@ export default function Layout() {
           </section>
           <Pedido />
         </main>
+        <Footer />
       </div>
 
       <Modal 
