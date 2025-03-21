@@ -5,6 +5,7 @@ import useAuth from '../../hooks/useAuth';
 import { ToastContainer } from 'react-toastify';
 
 import './AdminLayout.css'
+import Footer from '../../components/Footer/Footer';
 
 export default function AdminLayout() {
 
@@ -19,6 +20,7 @@ export default function AdminLayout() {
                 <ToastContainer />
             </section>
             </main>
+            <Footer />
         </div>
     )
 }
