@@ -1,5 +1,5 @@
 import React from 'react'
-import { MdEdit,  MdDelete} from "react-icons/md";
+import { MdEdit,  MdDelete} from 'react-icons/md';
 import { formatearDinero } from '../../helpers';
 import useUmamy from '../../hooks/useUmamy';
 import { useState, useEffect } from 'react';
@@ -42,14 +42,14 @@ export default function ResumenProducto({producto}) {
                     onClick={() => {handleEditarCantidad(id)}
                   }
                 >
-                    <MdEdit aria-hidden="true"/>
+                    <MdEdit aria-hidden='true'/>
                 </button>
                 <button 
                     className='resumenPedido__icono-eliminar'
                     aria-label='Eliminar producto'
                     onClick={() => {handleEliminarProductoPedido(id)}}
                 >
-                    <MdDelete aria-hidden="true"/>
+                    <MdDelete aria-hidden='true'/>
                 </button>
             </div>
         </section>

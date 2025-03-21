@@ -1,10 +1,10 @@
-import React from "react";
-import useSWR from "swr";
-import Axios from "../../config/axios";
-import AdminPedido from "../../components/AdminPedido/AdminPedido";
+import React from 'react';
+import useSWR from 'swr';
+import Axios from '../../config/axios';
+import AdminPedido from '../../components/AdminPedido/AdminPedido';
 
 import './AdminPedidos.css'
-import Loader from "../../components/Loader/Loader";
+import Loader from '../../components/Loader/Loader';
 
 export default function AdminPedidos() {
 
@@ -22,11 +22,11 @@ export default function AdminPedidos() {
   }
 
   return (
-    <section className="">
+    <section className=''>
       <h1>Pedidos</h1>
       <p>Vista para administrar los pedidos.</p>
 
-      <article className="contenedor__admin-pedidos">
+      <article className='contenedor__admin-pedidos'>
         {data.data.data.length > 0 ? (
           data.data.data.map((pedido) => (
             <AdminPedido key={pedido.id} pedido={pedido} />

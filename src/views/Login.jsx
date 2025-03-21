@@ -42,7 +42,7 @@ export default function Login() {
   return (
     <>
       <h1>Iniciar sesión</h1>
-      <div className="formulario-contenedor">
+      <div className='formulario-contenedor'>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
         {
                 errores 
@@ -53,37 +53,37 @@ export default function Login() {
                 : 
                 null
               }
-          <div className="formulario-apartado">
+          <div className='formulario-apartado'>
             <input
-              type="email"
-              id="email"
-              className="formulario-input"
-              name="email"
-              placeholder="Email"
+              type='email'
+              id='email'
+              className='formulario-input'
+              name='email'
+              placeholder='Email'
               {...register('email')}
             />
             {errors.email && <AlertaErroresFormulario>{errors.email.message}</AlertaErroresFormulario>}
           </div>
 
-          <div className="formulario-apartado">
+          <div className='formulario-apartado'>
             <input
-              type="password"
-              id="password"
-              className="formulario-input"
-              name="password"
-              placeholder="Password"
+              type='password'
+              id='password'
+              className='formulario-input'
+              name='password'
+              placeholder='Password'
               {...register('password')}
             />
             {errors.password && <AlertaErroresFormulario>{errors.password.message}</AlertaErroresFormulario>}
           </div>
 
-          <button className="formulario-boton">
+          <button className='formulario-boton'>
             Iniciar sesión
           </button>
         </form>
       </div>
-      <nav className="enlace-registro">
-        No tienes cuenta? <Link to="/auth/registro">Regístrate</Link>
+      <nav className='enlace-registro'>
+        No tienes cuenta? <Link to='/auth/registro'>Regístrate</Link>
       </nav>
     </>
   );

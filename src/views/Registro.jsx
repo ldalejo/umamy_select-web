@@ -58,7 +58,7 @@ export default function Registro() {
   return (
     <>
       <h1>Crear cuenta</h1>
-      <div className="formulario-contenedor">
+      <div className='formulario-contenedor'>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           {
             errores 
@@ -69,52 +69,52 @@ export default function Registro() {
           }
 
           {/* Campo Nombre */}
-          <div className="formulario-apartado">
+          <div className='formulario-apartado'>
             <input
-              type="text"
-              id="nombre"
-              className="formulario-input"
-              name="nombre"
-              placeholder="Nombre"
+              type='text'
+              id='nombre'
+              className='formulario-input'
+              name='nombre'
+              placeholder='Nombre'
               {...register('nombre')}
             />
             {errors.nombre && <AlertaErroresFormulario>{errors.nombre.message}</AlertaErroresFormulario>}
           </div>
 
           {/* Campo Email */}
-          <div className="formulario-apartado">
+          <div className='formulario-apartado'>
             <input
-              type="email"
-              id="email"
-              className="formulario-input"
-              name="email"
-              placeholder="Email"
+              type='email'
+              id='email'
+              className='formulario-input'
+              name='email'
+              placeholder='Email'
               {...register('email')}
             />
             {errors.email && <AlertaErroresFormulario>{errors.email.message}</AlertaErroresFormulario>}
           </div>
 
           {/* Campo Password */}
-          <div className="formulario-apartado">
+          <div className='formulario-apartado'>
             <input
-              type="password"
-              id="password"
-              className="formulario-input"
-              name="password"
-              placeholder="Password"
+              type='password'
+              id='password'
+              className='formulario-input'
+              name='password'
+              placeholder='Password'
               {...register('password')}
             />
             {errors.password && <AlertaErroresFormulario>{errors.password.message}</AlertaErroresFormulario>}
           </div>
 
           {/* Campo Confirmación de Password */}
-          <div className="formulario-apartado">
+          <div className='formulario-apartado'>
             <input
-              type="password"
-              id="confirmacion_password"
-              className="formulario-input"
-              name="confirmacion_password"
-              placeholder="Repetir Password"
+              type='password'
+              id='confirmacion_password'
+              className='formulario-input'
+              name='confirmacion_password'
+              placeholder='Repetir Password'
               {...register('password_confirmation')}
             />
             {errors.password_confirmation && <AlertaErroresFormulario>{errors.password_confirmation.message}</AlertaErroresFormulario>}
@@ -130,7 +130,7 @@ export default function Registro() {
       </div>
 
       <nav className='enlace-registro'>
-        ¿Ya tienes cuenta? <Link to="/auth/login">Inicia sesión</Link>
+        ¿Ya tienes cuenta? <Link to='/auth/login'>Inicia sesión</Link>
       </nav>
     </>
   );

@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
-import { MdSearch, MdShoppingCart, MdAccountCircle } from "react-icons/md";
+import { MdSearch, MdShoppingCart, MdAccountCircle } from 'react-icons/md';
 import useAuth from '../../hooks/useAuth';
 
-import "./Header.css";
+import './Header.css';
 
 export default function Header() {
 
@@ -17,33 +17,33 @@ export default function Header() {
     }
 
   return (
-    <header className="header">
+    <header className='header'>
 
-        <div className="header__contenido">
+        <div className='header__contenido'>
             {/* Logo */}
             <Link 
-                className="header__logo"
-                to="/"  
+                className='header__logo'
+                to='/'  
             >
                 <img
-                    src="/img/logo_pequeno.svg" 
-                    alt="Logo"
-                    className="header__logo-imagen"
+                    src='/img/logo_pequeno.svg' 
+                    alt='Logo'
+                    className='header__logo-imagen'
                 />
             </Link>
 
             {/* Barra de búsqueda */}
-            {/* <form className="header__busqueda">
-                <div className="header__busqueda-contenedor">
+            {/* <form className='header__busqueda'>
+                <div className='header__busqueda-contenedor'>
                     <input
-                        type="text"
-                        className="header__busqueda-input"
-                        placeholder="Buscar productos..."
-                        aria-label="Buscar productos"
+                        type='text'
+                        className='header__busqueda-input'
+                        placeholder='Buscar productos...'
+                        aria-label='Buscar productos'
                     />
                     <button 
-                        className="header__busqueda-boton" 
-                        aria-label="Buscar"
+                        className='header__busqueda-boton' 
+                        aria-label='Buscar'
                     >
                         <MdSearch size={24} />
                     </button>
@@ -51,10 +51,10 @@ export default function Header() {
             </form> */}
 
             {/* Usuario y cesta */}
-            <div className="header__usuario-cesta">
+            <div className='header__usuario-cesta'>
                 <button 
-                    className="header__usuario" 
-                    aria-label="Usuario"
+                    className='header__usuario' 
+                    aria-label='Usuario'
                     onClick={handlerMenuUser}
                 >
                     <MdAccountCircle size={40} />
@@ -62,7 +62,7 @@ export default function Header() {
                           
                 {/* Menú desplegable de usuario */}
                 {menuUserVisible && (
-                    <nav className="header__user-menu">
+                    <nav className='header__user-menu'>
                     <ul>
                         <li className='header__user-nombre'>{user?.name}</li>
                         <Link
@@ -89,7 +89,7 @@ export default function Header() {
                     </nav>
                 )}
 
-                <button className="header__pedido-boton" aria-label="Abrir el modal de Pedido">
+                <button className='header__pedido-boton' aria-label='Abrir el modal de Pedido'>
                     <MdShoppingCart size={40} />
                 </button>
 

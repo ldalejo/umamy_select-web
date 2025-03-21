@@ -1,9 +1,9 @@
-import React from "react";
-import useSWR from "swr";
-import Axios from "../../config/axios";
-import ClientePedido from "../../components/ClientePedido/ClientePedido";
-import { useParams } from "react-router-dom";
-import Loader from "../../components/Loader/Loader";
+import React from 'react';
+import useSWR from 'swr';
+import Axios from '../../config/axios';
+import ClientePedido from '../../components/ClientePedido/ClientePedido';
+import { useParams } from 'react-router-dom';
+import Loader from '../../components/Loader/Loader';
 
 import './HistorialPedidos.css'
 
@@ -30,7 +30,7 @@ export default function HistorialPedidos() {
     <section className=''>
       <h1>Historial de Pedidos</h1>
 
-      <article className="contenedor__admin-pedidos">
+      <article className='contenedor__admin-pedidos'>
         {data.data.data.map(pedido => (
           <ClientePedido
             key={pedido.id} 

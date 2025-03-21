@@ -1,6 +1,6 @@
 import React from 'react'
 import { formatearDinero } from '../../helpers';
-import useUmamy from "../../hooks/useUmamy";
+import useUmamy from '../../hooks/useUmamy';
 
 import './AdminPedido.css'
 

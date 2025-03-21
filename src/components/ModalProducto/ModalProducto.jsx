@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { MdCancel, MdAddCircle, MdRemoveCircle  } from "react-icons/md";
+import { MdCancel, MdAddCircle, MdRemoveCircle  } from 'react-icons/md';
 import useUmamy from '../../hooks/useUmamy';
 import { formatearDinero } from '../../helpers';
 
@@ -49,11 +49,11 @@ export default function ModalProducto() {
     }
 
   return (
-    <div role="dialog" aria-modal="true">
+    <div role='dialog' aria-modal='true'>
         <button
             onClick={handleClickModal}
-            className="modal__icono-cerrar"
-            aria-label="Cerrar modal"
+            className='modal__icono-cerrar'
+            aria-label='Cerrar modal'
         >
             <MdCancel size={40} />
         </button>
@@ -62,33 +62,33 @@ export default function ModalProducto() {
         <img 
             alt={`Imagen producto ${producto.nombre}`} 
             src={producto.imagen}
-            className="imagen"
+            className='imagen'
         />
-      <section className="modal__botones-container">
-            <article className="modal__cantidad-container">
+      <section className='modal__botones-container'>
+            <article className='modal__cantidad-container'>
                 <button
-                    type="button"
-                    className="modal_sumar-restar"
+                    type='button'
+                    className='modal_sumar-restar'
                     onClick={restarProducto}
-                    aria-label="Disminuir cantidad"
+                    aria-label='Disminuir cantidad'
                 >
                     <MdRemoveCircle />
                 </button>
-                <output className="modal__parrafo" aria-live="polite">
+                <output className='modal__parrafo' aria-live='polite'>
                     {cantidad}
                 </output>
                 <button
-                    type="button"
-                    className="modal_sumar-restar"
+                    type='button'
+                    className='modal_sumar-restar'
                     onClick={sumarProducto}
-                    aria-label="Aumentar cantidad"
+                    aria-label='Aumentar cantidad'
                 >
                 <MdAddCircle />
                 </button>
             </article>
             <button 
-                type="button" 
-                className="modal__anadir-producto"
+                type='button' 
+                className='modal__anadir-producto'
                 onClick={() => handleAgregarPedido({...producto, cantidad})}
             >
                 {edicion ? 'Editar' : 'Añadir'} {formatearDinero(importe)}

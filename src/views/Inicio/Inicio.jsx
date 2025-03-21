@@ -3,7 +3,7 @@ import useSWR from 'swr'
 import Producto from '../../components/Producto/Producto'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import useUmamy from '../../hooks/useUmamy'
-import Loader from "../../components/Loader/Loader";
+import Loader from '../../components/Loader/Loader';
 import Axios from '../../config/axios'
 
 import './Inicio.css'

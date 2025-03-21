@@ -1,10 +1,10 @@
 import React from 'react'
-import useSWR from "swr";
-import Axios from "../../config/axios";
-import useUmamy from "../../hooks/useUmamy";
+import useSWR from 'swr';
+import Axios from '../../config/axios';
+import useUmamy from '../../hooks/useUmamy';
 import Producto from '../../components/Producto/Producto';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import Loader from "../../components/Loader/Loader";
+import Loader from '../../components/Loader/Loader';
 
 import './AdminProductos.css'
 
@@ -37,7 +37,7 @@ export default function AdminProductos() {
         <article className='admin-productos__contenedor-productos'>
           <h1 className='admin-productos__h1'>{categoriaActual.nombre}</h1>
           <p className='admin-productos__p'>Vista para administrar los productos.</p>
-          <article className="admin-productos__productos">
+          <article className='admin-productos__productos'>
             {productos.map((producto) => (
               <Producto 
                   key={producto.id} 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-import { MdAccountCircle } from "react-icons/md";
+import { MdAccountCircle } from 'react-icons/md';
 import useAuth from '../../hooks/useAuth';
 
 import './AdminHeader.css';
@@ -17,26 +17,26 @@ export default function AdminHeader() {
   }
 
   return (
-    <header className="admin-header">
-      <div className="admin-header__contenido">
+    <header className='admin-header'>
+      <div className='admin-header__contenido'>
 
         {/* Logo */}
         <Link 
-          className="admin-header__logo"
-          to="/admin"  
+          className='admin-header__logo'
+          to='/admin'  
         >
           <img
-            src="/img/logo_pequeno.svg"
-            alt="Logo"
-            className="admin-header__logo-imagen"
+            src='/img/logo_pequeno.svg'
+            alt='Logo'
+            className='admin-header__logo-imagen'
           />
         </Link>
 
         {/* Admin */}
-        <div className="admin-header__usuario-cesta">
+        <div className='admin-header__usuario-cesta'>
           <button 
-            className="header__usuario" 
-            aria-label="Usuario"
+            className='header__usuario' 
+            aria-label='Usuario'
             onClick={handlerMenuUser}
           >
             <MdAccountCircle size={40} />
@@ -44,12 +44,12 @@ export default function AdminHeader() {
 
           {/* Menú desplegable del admin */}
           {menuUserVisible && (
-            <nav className="admin-header__user-menu">
+            <nav className='admin-header__user-menu'>
               <ul>
-                <li className="admin-header__user-nombre">{user?.name}</li>
+                <li className='admin-header__user-nombre'>{user?.name}</li>
                 <li>
                   <Link
-                      to="/admin" 
+                      to='/admin' 
                       className='link'
                       onClick={handlerMenuUser}
                     >
@@ -58,7 +58,7 @@ export default function AdminHeader() {
                 </li>
                 <li>
                   <Link
-                      to="/admin/completados"
+                      to='/admin/completados'
                       className='link'
                       onClick={handlerMenuUser}
                     >
@@ -67,7 +67,7 @@ export default function AdminHeader() {
                 </li>
                 <li>
                   <Link
-                      to="/admin/productos"
+                      to='/admin/productos'
                       className='link'
                       onClick={handlerMenuUser}
                     >
@@ -76,7 +76,7 @@ export default function AdminHeader() {
                 </li>
                 <li>
                   <Link
-                      to="/admin/productos/anadir-nuevo-producto"
+                      to='/admin/productos/anadir-nuevo-producto'
                       className='link'
                       onClick={handlerMenuUser}
                     >

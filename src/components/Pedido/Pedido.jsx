@@ -23,7 +23,7 @@ export default function Resumen() {
     } else {
       setDisabled(false);
     }
-    setValorBoton("CONFIRMAR");
+    setValorBoton('CONFIRMAR');
   }
 
   const handleSubmit = e => {
@@ -61,7 +61,7 @@ export default function Resumen() {
           onSubmit={handleSubmit}  
         >
           <input 
-            type="submit" 
+            type='submit' 
             className='enviar-pedido'
             value={valorBoton}
             disabled={disabled}

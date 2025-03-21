@@ -36,7 +36,7 @@ export default function Layout() {
       <Modal 
         isOpen={modal}
         className='modal'
-        overlayClassName="modal-overlay"
+        overlayClassName='modal-overlay'
       >
         <ModalProducto/>
         <button

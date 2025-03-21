@@ -1,6 +1,6 @@
-import { createContext, useState, useEffect } from "react";
-import { toast } from "react-toastify";
-import Axios from "../config/axios";
+import { createContext, useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
+import Axios from '../config/axios';
 
 const UmamyContext = createContext();
 
@@ -89,7 +89,7 @@ const UmamyProvider = ({ children }) => {
     const handleEliminarProductoPedido = id => {
         const pedidoActualizado = pedido.filter(producto => producto.id !== id)
         setPedido(pedidoActualizado);
-        toast.error("Producto eliminado.")
+        toast.error('Producto eliminado.')
     }
 
     const handleSubmitNuevoPedido = async () => {
