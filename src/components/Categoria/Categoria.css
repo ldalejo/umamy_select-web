@@ -2,13 +2,12 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    border: 1px solid #d1d5db;
     /* width: 100%; */
     padding: 0.75rem;
     cursor: pointer;
     font: bold;
     text-transform: uppercase;
-    background-color: white;
+    background-color: var(--blanco-puro);
     border:  0px;
     border-radius: 30px;
 }
@@ -17,19 +16,20 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    border: 1px solid #d1d5db;
     /* width: 100%; */
     padding: 0.75rem;
     cursor: pointer;
     font: bold;
     text-transform: uppercase;
     background-color: var(--naranja-oscuro);
+    color: var(--blanco-puro);
     border:  0px;
     border-radius: 30px;
 }
   
 .aside__categoria:hover {
     background-color: var(--naranja-oscuro);
+    color: var(--blanco-puro);
 }
 
 .aside__categoria-img {
@@ -54,5 +54,6 @@
 /* Cambio de color al pasar el mouse */
 .menu__item:hover {
     background-color: var(--naranja-oscuro);
+    color: var(--blanco-puro);
 }
   

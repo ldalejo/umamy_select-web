@@ -18,6 +18,8 @@
   --gris-suave: #F5F5F5;
   --negro-suave: #333333;
   --blanco-puro: #FFFFFF;
+  --rojo-danger: #dc3545;
+  --rojo-danger-oscuro: #c82333;
 
   /* Breakpoints */
   --breakpoint-movil-s: 480px;
