@@ -38,6 +38,21 @@ const UmamyProvider = ({ children }) => {
             console.log(error);
         }
     }
+
+    /* const obtenerProductos = async () => {
+        const token = localStorage.getItem('AUTH_TOKEN');
+
+        try {
+            const {data} = await Axios('/api/productos', {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                }
+            });
+
+        } catch (error) {
+            console.log(error);
+        }
+    } */
     
     const handleClickCategoria = id => {
         const categoria = categorias.filter(categoria => categoria.id === id)[0];
@@ -180,6 +195,59 @@ const UmamyProvider = ({ children }) => {
         }
     }
 
+    const handleAnadirProductoSubmit = async (datosProducto, reset) => {
+        const token = localStorage.getItem('AUTH_TOKEN');
+        try {
+            const { data } = await Axios.post('/api/producto/anadir-producto', datosProducto,
+        {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'multipart/form-data',
+            }
+        });
+
+        toast.success(data.message);
+        reset();
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    /* const fetcher = () => {
+        const token = localStorage.getItem('AUTH_TOKEN');
+        Axios.get('/api/productos', {
+            headers: {
+            Authorization: `Bearer ${token}`,
+            },
+        });
+    } */
+        
+
+    const handleEliminarProducto = async (id) => {
+        const token = localStorage.getItem('AUTH_TOKEN');
+        if (!window.confirm('Estás seguro de eliminar este producto?')) {
+            return;
+        }
+
+        console.log(id)
+
+        try {
+            const { data } = await Axios.delete(`/api/producto/eliminar-producto/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                },
+            });
+            toast.success(data.message);
+
+            // Actualizamos la lista de productos
+            // fetcher();
+
+        } catch (error) {
+            console.log(error);
+        }
+    }    
+
     return (
         <UmamyContext.Provider
             value={{
@@ -200,7 +268,9 @@ const UmamyProvider = ({ children }) => {
                 handleCompletarPedido,
                 handleDisponibilidadProducto,
                 handleCobrarPedido,
-                handleDatosUsuarioSubmit
+                handleDatosUsuarioSubmit,
+                handleAnadirProductoSubmit,
+                handleEliminarProducto
             }}
         >
             {children}

@@ -75,6 +75,15 @@ export default function AdminHeader() {
                     </Link>
                 </li>
                 <li>
+                  <Link
+                      to="/admin/productos/anadir-nuevo-producto"
+                      className='link'
+                      onClick={handlerMenuUser}
+                    >
+                      Añadir nuevo producto
+                    </Link>
+                </li>
+                <li>
                   <button 
                     className='admin-header__user-menu-button'
                     onClick={logout}

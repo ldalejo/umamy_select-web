@@ -15,6 +15,13 @@
     border-radius: 20px;
 }
 
+.contenedor__botones-producto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
 .producto__contenido {
     max-width: 300px;
 }
@@ -27,19 +34,41 @@
 }
 
 .producto__boton {
-    width: 150px;
+    width: 140px;
     margin-bottom: 10px;
     border-radius: 30px;
     background-color: var(--naranja-calabaza);
+    color: var(--blanco-puro);
     cursor: pointer;
 }
 
-.producto__boton-agotado{
-    width: 150px;
+.producto__boton:hover {
+    background: var(--naranja-oscuro);
+}
+
+.producto__boton-agotado {
+    width: 140px;
     margin-bottom: 10px;
     border-radius: 30px;
     background-color: var(--rojo-tomate);
+    color: var(--blanco-puro);
     cursor: pointer;
+}
+
+.producto__boton-agotado:hover {
+    background-color: var(--rojo-oscuro);
+}
+
+.producto__boton-eliminar {
+    width: 70px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    background-color: var(--rojo-danger);
+    cursor: pointer;
+}
+
+.producto__boton-eliminar:hover {
+    background-color: var(--rojo-danger-oscuro);
 }
 
 @media (max-width: 768px) {

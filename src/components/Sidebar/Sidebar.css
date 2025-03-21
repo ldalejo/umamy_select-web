@@ -13,7 +13,7 @@
 .menu {
     width: 97%;
     max-width: 900px;
-    background-color: #fff;
+    background-color: var(--blanco-puro);
     border-radius: 50px;
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); 
 }
@@ -38,7 +38,7 @@
 .menu__item {
     text-align: center;
     font-weight: bold;
-    color: #333;
+    color: var(--negro-suave);
     text-decoration: none;
     transition: background-color 0.3s ease-in-out;
     border-radius: 20px; 
